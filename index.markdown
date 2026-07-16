@@ -15,7 +15,7 @@ layout: default
 <ul>
 <li><strong>[Apr, 2026]</strong>: New paper on arXiv — "Using a generative model for out-of-sample testing of two-stage stochastic programs" </li>
 <li><strong>[Oct, 2025]</strong>: Presented work on a backtracking-based heuristic for train-to-fuel-pad assignments at INFORMS 2025, Atlanta</li>
-<li><strong>[Sep, 2025]</strong>: Paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352467725003558" style="color: blue; text-decoration: underline;">Co-optimizing grid resilience to flooding</a> accepted in Sustainable Energy, Grids and Networks</li>
+<li><strong>[Sep, 2025]</strong>: Paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352467725003558" style="color: blue; text-decoration: underline;">Co-optimizing grid resilience decisions for flooding</a> accepted in Sustainable Energy, Grids and Networks</li>
 <li><strong>[Nov, 2024]</strong>: Presented <a href="https://ieeexplore.ieee.org/abstract/document/10838934" style="color: blue; text-decoration: underline;">NORTA modeling for flood scenarios</a> at the INFORMS Winter Simulation Conference, Orlando</li>
 <li><strong>[June, 2024]</strong>: Joined BNSF Railway</li>
 </ul>
