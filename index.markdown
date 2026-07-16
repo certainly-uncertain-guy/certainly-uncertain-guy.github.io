@@ -13,11 +13,11 @@ layout: default
 <p><strong>Research background:</strong> I completed my PhD in Operations Research at UT Austin, where I developed optimization frameworks for infrastructure planning under uncertainty — designing stochastic and robust models with scalable solution methods. My research has been published in peer-reviewed venues and received the Best Student Paper Award at the IISE Annual Conference. I also worked on reinforcement learning for networked systems, including inverse RL for routing policy inference and multi-agent RL for coordinated traffic optimization.</p>
 <h3>News</h3>
 <ul>
-<li><strong>[Apr, 2026]</strong>: New paper on arXiv — "Using a generative model for out-of-sample testing of two-stage stochastic programs" </li>
-<li><strong>[Oct, 2025]</strong>: Presented work on a backtracking-based heuristic for train-to-fuel-pad assignments at INFORMS 2025, Atlanta</li>
+<li><strong>[Apr, 2026]</strong>: Paper on <a href="https://arxiv.org/pdf/2604.22221" style="color: blue; text-decoration: underline;">Out-of-sample testing of two-stage stochastic programs</a> posted on arXiv</li>
+<li><strong>[Oct, 2025]</strong>: Gave invited talk on "A backtracking heuristic for train-to-fuel-pad assignments" at INFORMS 2025, Atlanta</li>
 <li><strong>[Sep, 2025]</strong>: Paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352467725003558" style="color: blue; text-decoration: underline;">Co-optimizing grid resilience decisions for flooding</a> accepted in Sustainable Energy, Grids and Networks</li>
-<li><strong>[Nov, 2024]</strong>: Presented <a href="https://ieeexplore.ieee.org/abstract/document/10838934" style="color: blue; text-decoration: underline;">NORTA modeling for flood scenarios</a> at the INFORMS Winter Simulation Conference, Orlando</li>
-<li><strong>[June, 2024]</strong>: Joined BNSF Railway</li>
+<li><strong>[Nov, 2024]</strong>: Paper on <a href="https://ieeexplore.ieee.org/abstract/document/10838934" style="color: blue; text-decoration: underline;">NORTA modeling for flood scenarios</a> accepted at the Winter Simulation Conference, 2024</li>
+<li><strong>[June, 2024]</strong>: Joined BNSF Railway as an Optimization Specialist</li>
 </ul>
 <h3>Get in Touch</h3>
 <p>Feel free to reach out via <a href="mailto:ashutosh.shukla@utexas.edu" style="color: blue; text-decoration: underline;">email</a> or connect with me on <a href="https://www.linkedin.com/in/ashutosh-ut-phd/" style="color: blue; text-decoration: underline;">LinkedIn</a> and <a href="https://github.com/ashutoshshuklaUT" style="color: blue; text-decoration: underline;">GitHub</a>.</p>
