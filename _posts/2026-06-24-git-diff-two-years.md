@@ -4,6 +4,61 @@ date: 2026-06-24
 categories: []
 tags: []
 ---
+June 3, 2026 marked two years since I finished grad school and joined BNSF Railway. Since then, I have been reflecting on the lessons I learned over these two years, and because they still feel fresh, I am making an attempt to put them on paper. The idea is that through essays like this, I can watch how my worldview evolves with time.
+
+## Transition: from academia to industry
+
+I arrived at BNSF carrying the enthusiasm of someone who had just spent years immersed in graduate coursework and research, and who had developed an arsenal of analytical tools that I felt ready to put to use. During grad school, I took eighteen courses, an unusually high number. I touched several areas within Applied Mathematics: from machine learning and reinforcement learning to distributionally robust optimization, to simulation and queuing theory, to discrete optimization. Grad school days were, in many ways, the best of my life: alongside a deep dive into developing modeling and algorithmic frameworks for network resilience decision-making against extreme events, I explored an enormous breadth of adjacent fields. When I finally started my job, I was eager to put all of it to use.
+
+### A wide range of problems
+
+My job responsibilities at BNSF did not disappoint me at all on that front. The railroad offered a wide spectrum of problems to work on, and even though I could not personally touch every one of them, I was fortunate to be surrounded by like-minded operations research and simulation experts who, collectively, covered nearly the entire range. I had the luxury of dropping by their desks, having long conversations about the approaches they were taking and the design choices behind them. I was consistently surprised by the level of detail the simulation models at BNSF captured: a team of three had developed a model that simulated the operations of an entire yard.
+
+### Finding my own problems
+
+What struck me most, though, was how different the process of finding a problem was compared to my previous jobs. In a typical company, there is a strong notion of product: the business decides what to build, product managers translate that decision into epics, features, and stories, and only once a project has been scoped with a detailed product roadmap does engineering or data science begin its work. At BNSF, the process ran in the opposite direction. We were expected, and often encouraged, to network across the company, ask people about the problems weighing on them, and develop our own prototypes before presenting them back. If there was sufficient interest, an idea would take off; otherwise, it might remain a small internal tool, or simply be set aside. We were handed high-level problem definitions at best, and given extreme flexibility to stretch those problems in whatever direction seemed promising. It felt, in many ways, like searching for a dissertation topic all over again. Just as my graduate advisor once introduced me to people when we had only a vague notion of what research direction to pursue, my manager did the same at BNSF, and together we spent hours turning those vague notions into use cases, ultimately exploring several different directions before converging on a few.
+
+### Four early experiments
+
+In my first six months, brainstorming led me down at least four distinct paths. The first one was about developing a quick tool that would tell how much it costs to re-route a train. The tool had real but very moderate usage limited to a small number of people. The second idea I pursue required implmenting an idea from game theory: a Stackelberg game applied to a toll-pricing problem, for which I hand-derived the complementarity constraint equations myself. The model performed as expected, but the underlying computational complexity of the problem made the approach impossible to scale, and the lack of traction eventually meant the project never left the ground. A third effort, a stable matching algorithm meant to decide which trains should be combined into longer trains to save resources, still sits in a repository today. The fourth was a model for assignment and scheduling: it sat untouched for nine months before it caught the attention of senior management, and once it did, it took off in a way none of the others had. That algorithm is now deployed at one of the largest fueling terminals in North America, overseeing more than a billion dollars worth of fuel consumption, and it gave me the opportunity to present the work at academic conferences. The algorithm is now being scaled to serve several hubs and terminals.
+
+### The train-to-track project
+
+That fourth project, the train-to-track assignment problem at BNSF's largest fueling station, was my first real encounter with how operations research is practiced in industry, and it taught me things graduate school never had reason to. In this project, nobody cared much about the optimality gap. What mattered was automation that could replace the inconsistent, judgment-based assignments that humans had been making based on their hunch about what the right thing to do was. The model needed to produce decisions while accounting for a wide range of real-world constraints: the topology of the fueling terminal, the hierarchy of train importance, near-real-time adjustments as train arrival estimates changed, and a full schedule generated for the following day. Most interesting of all, and something I had never encountered in graduate school, was the requirement that every single assignment be perfectly explainable.
+
+### Learning to sell the work
+
+This was the first time I had to navigate a tradeoff in which scientific rigor was not the only guiding principle. I needed to earn early social capital. I needed to deliver something that worked within weeks. And I needed the output to be polished enough to catch the attention of a busy leader with little patience for unfinished work. So I did exactly that: after two months of essentially locking myself in my cubicle, disconnected from the rest of the company, I built a backtracking algorithm that elegantly did what it was supposed to do. I also learnt to lean on others for things I was not good at. Specifically, in this case, I found someone in the company who knew dashboarding well enough to make a Gantt Chart on Power BI for me, which we auto-refreshed with the most up-to-date recommendations. Wherever we wanted to sell our model, instead of explaining anything much, we would just show the dashboard and let them play with it. I learnt an important lesson here: nobody wants to listen, nobody wants to read, but everyone is happy to engage and play with tools. The more interactive the front-end of your model is, the more likely it is to get attention.
+
+### An academic mindset in industry
+
+While I picked up on some of the things that mattered more in industry than in academia, at heart, I approached problems just like an academic. Anything that offered an opportunity to build a cool algorithm from scratch, I would chase. Very soon, as you will read below, I realized how many other things needed to fall into place to get a model to production. I learnt the importance of stakeholder alignment, the importance of effective communication, the importance of building relationships, earning social capital with partners, and advocacy from senior-most leaders. These are factors that decide whether that cool model of mine will make it to production or not. I will soon get to specifics but the short version is this: because I did not account for all these factors, it took ten months after the model was ready for it to catch the attention of a vice president, fourteen months after it was ready to finally make it into production, and fifteen months after it was ready before finance signed off, confirming that the model was making a measurable financial impact.
+
+## Transition: from a mid-level to a senior engineer
+
+Interestingly, right around the mark I ended year 1, a senior colleague of mine left BNSF. As a consequence, I was made the new owner of this project. Because this project had resources involved, I had to put my train to track project on shelf for a while and devote myself entirely to pick this up. Now in this project, the part that excited me the most was solved to some extent. There was enough evidence to prove that from a science perspective, the approach should work. However, the project was an ongoing effort for two years with no adoption at all. The code for a giant model was in really bad shape, barely had any comments and was around 5k lines of core algorithm in one single file. No classes, no modules, it was a piece of mess. However, it worked. What was uncertain was that can we ever get adoption, was the model doing what was supposed to happen on ground. For this project, science was not to-do part, it was done to some extent, the challenge was adoption and showing measurable impact. Business was convinced that if the model can be deployed and can do what needs to be done, we will become leaders in this domain and will probably be the first railroad to achieve this feat.
+
+
+
+
+
+
+​    
+
+​    
+
+
+
+## Developing a business-first mindset
+
+Over time, I realized 
+
+
+
+
+
+
+
 Two years ago I joined as a data scientist. I had strong technical instincts and a vague sense that good models were the point. I was wrong about that — at least about which part is hardest.
 
 Here is what I actually learned.
