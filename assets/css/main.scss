@@ -623,3 +623,28 @@ a:hover {
   color: var(--background) !important;
   border-color: var(--primary-color);
 }
+
+/* Mentoring page */
+.mentoring-group {
+  max-width: 90%;
+  margin: 0 auto 2.5rem;
+}
+
+.mentoring-group-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.mentoring-guide-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mentoring-guide-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
