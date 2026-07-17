@@ -648,3 +648,26 @@ a:hover {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--border-color);
 }
+
+/* Misc living pages */
+.misc-pages {
+  max-width: 90%;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.misc-page-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  transition: transform 0.3s ease;
+}
+
+.misc-page-card:hover {
+  transform: translateY(-5px);
+}
