@@ -6,30 +6,19 @@ permalink: /blog/
 
 <section class="blog-section">
   <div class="container">
-    <div class="post-list">
-      {% for post in paginator.posts %}
-        <article class="post-card">
-          <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
-          <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
-          <a href="{{ post.url | relative_url }}" class="btn small">Read More</a>
-        </article>
-      {% endfor %}
+    <div class="hub-cards">
+      <a class="hub-card" href="{{ '/learning/' | relative_url }}">
+        <h2>Learning</h2>
+        <p>Notes on new tools, AI, algorithms, project write-ups, and reflections on management and work.</p>
+      </a>
+      <a class="hub-card" href="{{ '/mentoring/' | relative_url }}">
+        <h2>Mentoring</h2>
+        <p>A reference library for routine how-tos — PPTs, reports, code reviews, PRs, and more.</p>
+      </a>
+      <a class="hub-card" href="{{ '/misc/' | relative_url }}">
+        <h2>Misc</h2>
+        <p>Nerdy personal-data projects and one-off write-ups that don't fit anywhere else.</p>
+      </a>
     </div>
-    
-    <!-- Pagination links -->
-    {% if paginator.total_pages > 1 %}
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">&laquo; Previous</a>
-      {% endif %}
-      
-      <span class="page_number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-      
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}" class="next">Next &raquo;</a>
-      {% endif %}
-    </div>
-    {% endif %}
   </div>
 </section>

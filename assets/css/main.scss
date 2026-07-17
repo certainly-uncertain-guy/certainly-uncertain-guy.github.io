@@ -671,3 +671,31 @@ a:hover {
 .misc-page-card:hover {
   transform: translateY(-5px);
 }
+
+/* Blog hub */
+.hub-cards {
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.hub-card {
+  display: block;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  transition: transform 0.3s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.hub-card h2 {
+  margin-bottom: 0.75rem;
+}
