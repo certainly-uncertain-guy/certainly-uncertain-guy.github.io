@@ -638,6 +638,12 @@ a:hover {
   padding-bottom: 0.5rem;
 }
 
+/* Blog hub section headers (Learning/Mentoring/Misc) — bigger/bolder than the mentoring page's tag-group headers */
+.link-group-title.hub-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
 .link-list {
   list-style: none;
   padding: 0;
