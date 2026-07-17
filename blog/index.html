@@ -6,19 +6,48 @@ permalink: /blog/
 
 <section class="blog-section">
   <div class="container">
-    <div class="hub-cards">
-      <a class="hub-card" href="{{ '/learning/' | relative_url }}">
-        <h2>Learning</h2>
-        <p>Notes on new tools, AI, algorithms, project write-ups, and reflections on management and work.</p>
-      </a>
-      <a class="hub-card" href="{{ '/mentoring/' | relative_url }}">
-        <h2>Mentoring</h2>
-        <p>A reference library for routine how-tos — PPTs, reports, code reviews, PRs, and more.</p>
-      </a>
-      <a class="hub-card" href="{{ '/misc/' | relative_url }}">
-        <h2>Misc</h2>
-        <p>Nerdy personal-data projects and one-off write-ups that don't fit anywhere else.</p>
-      </a>
+
+    <div class="link-group">
+      <h2 class="link-group-title"><a href="{{ '/learning/' | relative_url }}">Learning</a></h2>
+      <ul class="link-list">
+        {% if site.categories.learning %}
+          {% assign learning_posts = site.categories.learning | sort: "date" | reverse %}
+        {% else %}
+          {% assign learning_posts = empty %}
+        {% endif %}
+        {% for post in learning_posts %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
     </div>
+
+    <div class="link-group">
+      <h2 class="link-group-title"><a href="{{ '/mentoring/' | relative_url }}">Mentoring</a></h2>
+      <ul class="link-list">
+        {% if site.categories.mentoring %}
+          {% assign mentoring_posts = site.categories.mentoring | sort: "title" %}
+        {% else %}
+          {% assign mentoring_posts = empty %}
+        {% endif %}
+        {% for post in mentoring_posts %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="link-group">
+      <h2 class="link-group-title"><a href="{{ '/misc/' | relative_url }}">Misc</a></h2>
+      <ul class="link-list">
+        {% if site.categories.misc %}
+          {% assign misc_posts = site.categories.misc | sort: "date" | reverse %}
+        {% else %}
+          {% assign misc_posts = empty %}
+        {% endif %}
+        {% for post in misc_posts %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
   </div>
 </section>
