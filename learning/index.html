@@ -1,0 +1,43 @@
+---
+layout: default
+title: Learning
+permalink: /learning/
+---
+
+<section class="blog-section">
+  <div class="container">
+    <p class="section-intro">Notes on what I'm learning — new tools, AI and algorithms, project write-ups, and reflections on management and work.</p>
+
+    {% assign learning_posts = site.categories.learning | sort: "date" | reverse %}
+
+    <div class="tag-filter" id="tag-filter">
+      <button class="tag-pill active" data-tag="all" type="button">All</button>
+      {% for tag_item in site.tags %}
+        {% assign tag_name = tag_item[0] %}
+        {% assign tag_posts = tag_item[1] %}
+        {% assign show_tag = false %}
+        {% for p in tag_posts %}
+          {% if p.categories contains "learning" %}
+            {% assign show_tag = true %}
+          {% endif %}
+        {% endfor %}
+        {% if show_tag %}
+          <button class="tag-pill" data-tag="{{ tag_name }}" type="button">{{ tag_name }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="post-list" id="post-list">
+      {% for post in learning_posts %}
+        <article class="post-card" data-tags="{{ post.tags | join: ',' }}">
+          <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          <a href="{{ post.url | relative_url }}" class="btn small">Read More</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
