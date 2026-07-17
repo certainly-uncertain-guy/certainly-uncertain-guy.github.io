@@ -41,7 +41,7 @@ Imports Minima as a base, then overrides everything with CSS custom properties. 
 - `_posts/` — blog posts; filename must follow Jekyll convention `YYYY-MM-DD-title.md`, front matter needs `layout: post` (set by default in `_config.yml`). Every post's `:title` permalink segment comes from the **filename**, not the front-matter `title:`.
 
 **Plugins (configured in `_config.yml` and `Gemfile`):**  
-`jekyll-feed`, `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-paginate`. The `{% seo %}` tag in `default.html` handles meta tags automatically from `_config.yml` fields.
+`jekyll-feed`, `jekyll-seo-tag`, `jekyll-sitemap`. The `{% seo %}` tag in `default.html` handles meta tags automatically from `_config.yml` fields. (`jekyll-paginate` is listed in the `Gemfile` but was never added to `_config.yml`'s `plugins:` list, and nothing in the site uses it.)
 
 **Blog taxonomy:** Every post must set `categories` to exactly one of `learning`, `mentoring`, or `misc` — this determines both which section page it appears on and its permalink prefix (`permalink: /:categories/:year/:month/:day/:title/` in `_config.yml`). `tags` are freeform and optional:
 - **Learning** (`/learning/`) — reverse-chronological, with a client-side tag filter (`assets/js/tag-filter.js`) driven by whatever tags appear on Learning posts.

@@ -20,8 +20,10 @@ plugins:
 
 # Not part of the published site — design specs/plans, some of which contain
 # literal {% %} Liquid syntax in code examples that would otherwise break the build.
+# CLAUDE.md is internal dev-agent guidance, not site content.
 exclude:
   - docs
+  - CLAUDE.md
 
 # Default front matter
 defaults:
