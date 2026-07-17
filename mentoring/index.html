@@ -20,9 +20,9 @@ permalink: /mentoring/
         {% endif %}
       {% endfor %}
       {% if has_mentoring_post %}
-        <div class="mentoring-group">
-          <h2 class="mentoring-group-title">{{ tag_name }}</h2>
-          <ul class="mentoring-guide-list">
+        <div class="link-group">
+          <h2 class="link-group-title">{{ tag_name }}</h2>
+          <ul class="link-list">
             {% for p in tag_posts %}
               {% if p.categories contains "mentoring" %}
                 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
@@ -40,9 +40,9 @@ permalink: /mentoring/
       {% endif %}
     {% endfor %}
     {% if has_untagged %}
-      <div class="mentoring-group">
-        <h2 class="mentoring-group-title">General</h2>
-        <ul class="mentoring-guide-list">
+      <div class="link-group">
+        <h2 class="link-group-title">General</h2>
+        <ul class="link-list">
           {% for p in mentoring_posts %}
             {% if p.tags == empty %}
               <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>

@@ -624,13 +624,13 @@ a:hover {
   border-color: var(--primary-color);
 }
 
-/* Mentoring page */
-.mentoring-group {
+/* Shared header+list pattern (Mentoring page, Blog hub) */
+.link-group {
   max-width: 90%;
   margin: 0 auto 2.5rem;
 }
 
-.mentoring-group-title {
+.link-group-title {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -638,13 +638,13 @@ a:hover {
   padding-bottom: 0.5rem;
 }
 
-.mentoring-guide-list {
+.link-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.mentoring-guide-list li {
+.link-list li {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--border-color);
 }
@@ -670,32 +670,4 @@ a:hover {
 
 .misc-page-card:hover {
   transform: translateY(-5px);
-}
-
-/* Blog hub */
-.hub-cards {
-  max-width: 90%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.hub-card {
-  display: block;
-  padding: 2.5rem 2rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  color: var(--text-color) !important;
-  text-decoration: none !important;
-  transition: transform 0.3s ease;
-}
-
-.hub-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-}
-
-.hub-card h2 {
-  margin-bottom: 0.75rem;
 }
