@@ -19,7 +19,11 @@ permalink: /misc/
       </div>
     {% endif %}
 
-    {% assign misc_posts = site.categories.misc | sort: "date" | reverse %}
+    {% if site.categories.misc %}
+      {% assign misc_posts = site.categories.misc | sort: "date" | reverse %}
+    {% else %}
+      {% assign misc_posts = empty %}
+    {% endif %}
     <div class="post-list">
       {% for post in misc_posts %}
         <article class="post-card">

@@ -8,7 +8,11 @@ permalink: /learning/
   <div class="container">
     <p class="section-intro">Notes on what I'm learning — new tools, AI and algorithms, project write-ups, and reflections on management and work.</p>
 
-    {% assign learning_posts = site.categories.learning | sort: "date" | reverse %}
+    {% if site.categories.learning %}
+      {% assign learning_posts = site.categories.learning | sort: "date" | reverse %}
+    {% else %}
+      {% assign learning_posts = empty %}
+    {% endif %}
 
     <div class="tag-filter" id="tag-filter">
       <button class="tag-pill active" data-tag="all" type="button">All</button>
