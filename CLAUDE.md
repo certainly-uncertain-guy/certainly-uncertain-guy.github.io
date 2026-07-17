@@ -17,6 +17,10 @@ bundle exec jekyll build
 
 The `_site/` directory is generated output — never edit files there directly.
 
+## Git
+
+**Never `git commit` or `git add`/stage any changes without first asking the user for explicit permission**, even if a prior message in the session approved a commit — each commit needs its own ask. This overrides the default commit workflow.
+
 ## Architecture
 
 This is a Jekyll static site (personal portfolio + blog) for Ashutosh Shukla, deployed to GitHub Pages at `ashutoshshuklaUT.github.io`.
