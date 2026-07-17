@@ -20,7 +20,7 @@ layout: default
 <li><strong>[June, 2024]</strong>: Joined BNSF Railway as an Optimization Specialist</li>
 </ul>
 <h3>Get in Touch</h3>
-<p>Feel free to reach out via <a href="mailto:ashutosh.shukla@utexas.edu" style="color: blue; text-decoration: underline;">email</a> or connect with me on <a href="https://www.linkedin.com/in/ashutosh-ut-phd/" style="color: blue; text-decoration: underline;">LinkedIn</a> and <a href="https://github.com/ashutoshshuklaUT" style="color: blue; text-decoration: underline;">GitHub</a>.</p>
+<p>Feel free to reach out via <a href="mailto:ashutosh.shukla@utexas.edu" style="color: blue; text-decoration: underline;">email</a> or connect with me on <a href="https://www.linkedin.com/in/ashutosh-ut-phd/" style="color: blue; text-decoration: underline;">LinkedIn</a> and <a href="https://github.com/certainly-uncertain-guy" style="color: blue; text-decoration: underline;">GitHub</a>.</p>
 </div>
 </div>
 <div class="blog-button-container">

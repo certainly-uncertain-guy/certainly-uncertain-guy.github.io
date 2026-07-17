@@ -23,7 +23,7 @@ The `_site/` directory is generated output — never edit files there directly.
 
 ## Architecture
 
-This is a Jekyll static site (personal portfolio + blog) for Ashutosh Shukla, deployed to GitHub Pages at `ashutoshshuklaUT.github.io`.
+This is a Jekyll static site (personal portfolio + blog) for Ashutosh Shukla, deployed to GitHub Pages at `certainly-uncertain-guy.github.io`.
 
 **Layout hierarchy:**
 - `_layouts/default.html` — master shell: header, nav, footer, and the dark-mode toggle (JS reads/writes `localStorage` and flips `data-theme` on `<html>`). All other layouts extend this.
