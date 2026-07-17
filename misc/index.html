@@ -1,0 +1,38 @@
+---
+layout: default
+title: Misc
+permalink: /misc/
+---
+
+<section class="blog-section">
+  <div class="container">
+    <p class="section-intro">Everything else — nerdy personal-data projects and one-off write-ups that didn't fit anywhere above.</p>
+
+    {% if site.data.misc_pages and site.data.misc_pages.size > 0 %}
+      <div class="misc-pages">
+        {% for p in site.data.misc_pages %}
+          <a class="misc-page-card" href="{{ p.url | relative_url }}">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.description }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if site.categories.misc %}
+      {% assign misc_posts = site.categories.misc | sort: "date" | reverse %}
+    {% else %}
+      {% assign misc_posts = empty %}
+    {% endif %}
+    <div class="post-list">
+      {% for post in misc_posts %}
+        <article class="post-card">
+          <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          <a href="{{ post.url | relative_url }}" class="btn small">Read More</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

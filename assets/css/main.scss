@@ -32,7 +32,7 @@
 
 /* Base styles */
 body {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--light-background); /* Changed from var(--background) to maintain consistent background */
@@ -584,4 +584,118 @@ a:hover {
   .site-header .container {
     padding: 0.5rem 10px; /* Smaller padding on mobile */
   }
+}
+
+/* Section intro (Learning/Mentoring/Misc) */
+.section-intro {
+  max-width: 90%;
+  margin: 0 auto 2.5rem;
+  font-size: 1.125rem;
+  color: var(--light-text);
+}
+
+/* Tag filter (Learning page) */
+.tag-filter {
+  max-width: 90%;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-pill {
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  border-color: var(--primary-color);
+}
+
+.tag-pill.active {
+  background-color: var(--primary-color);
+  color: var(--background) !important;
+  border-color: var(--primary-color);
+}
+
+/* Mentoring page */
+.mentoring-group {
+  max-width: 90%;
+  margin: 0 auto 2.5rem;
+}
+
+.mentoring-group-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.mentoring-guide-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mentoring-guide-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Misc living pages */
+.misc-pages {
+  max-width: 90%;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.misc-page-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  transition: transform 0.3s ease;
+}
+
+.misc-page-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Blog hub */
+.hub-cards {
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.hub-card {
+  display: block;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  transition: transform 0.3s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.hub-card h2 {
+  margin-bottom: 0.75rem;
 }
