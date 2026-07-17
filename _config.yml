@@ -18,6 +18,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Not part of the published site — design specs/plans, some of which contain
+# literal {% %} Liquid syntax in code examples that would otherwise break the build.
+exclude:
+  - docs
+
 # Pagination for blog
 paginate: 5
 paginate_path: "/blog/page:num/"
