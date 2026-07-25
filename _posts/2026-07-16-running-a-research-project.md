@@ -3,7 +3,7 @@ title: "Running a Research Project"
 date: 2026-07-16
 categories: [mentoring]
 tags: [research, writing, process]
-excerpt: "A practical guide to running a research project end to end — from setting up the repo, to picking a problem worth working on, to drafting and revising the paper."
+excerpt: "A practical guide to running a research project end to end"
 ---
 During my PhD, I converged to a process that I now follow to run a research project. Below is a high-level overview of the same.
 
