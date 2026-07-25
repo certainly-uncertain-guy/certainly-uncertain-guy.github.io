@@ -43,7 +43,7 @@ Once a full draft exists:
 - Read it out loud: your ear catches awkward phrasing your eyes skip past.
 - Get a friend or colleague to proofread and critique it. Fresh readers find gaps you can't see anymore.
 
-## Guidelines to write each Section
+## Guidelines to write each section
 
 ### **Title**
 
