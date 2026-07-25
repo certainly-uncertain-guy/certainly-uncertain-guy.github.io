@@ -540,7 +540,8 @@ a:hover {
     gap: 1rem;
   }
   
-  .post-title {
+  .post-title,
+  .hub-title {
     font-size: 2.5rem;
   }
   
@@ -624,35 +625,39 @@ a:hover {
   border-color: var(--primary-color);
 }
 
-/* Shared header+list pattern (Mentoring page, Blog hub) */
-.link-group {
+/* Blog hub list */
+.hub-list {
   max-width: 90%;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto;
 }
 
-.link-group-title {
-  font-size: 1.5rem;
+.hub-card {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 0 2rem 0;
+  transition: transform 0.3s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-5px);
+}
+
+.hub-title {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.5rem;
 }
 
-/* Blog hub section headers (Learning/Mentoring/Misc) — bigger/bolder than the mentoring page's tag-group headers */
-.link-group-title.hub-title {
-  font-size: 2.25rem;
-  font-weight: 800;
+.hub-title a {
+  font-weight: 700;
 }
 
-.link-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.link-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border-color);
+.hub-excerpt {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  color: var(--light-text);
+  line-height: 1.6;
 }
 
 /* Misc living pages */

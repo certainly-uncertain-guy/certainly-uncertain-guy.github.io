@@ -38,14 +38,18 @@ Imports Minima as a base, then overrides everything with CSS custom properties. 
 - `blog/index.html` — static hub page linking to the three sections below. No longer a post feed.
 - `learning/index.html`, `mentoring/index.html`, `misc/index.html` — the three blog sections (see "Blog taxonomy" below).
 - `_data/misc_pages.yml` — list of standalone "living pages" (e.g. a future running-stats page) shown as cards on `/misc/`; empty until one is added.
+- `_includes/tag-filtered-posts.html` — shared tag-filter bar + post-list partial, included by `learning/index.html`, `mentoring/index.html`, and `misc/index.html`, parameterized by `category`.
 - `_posts/` — blog posts; filename must follow Jekyll convention `YYYY-MM-DD-title.md`, front matter needs `layout: post` (set by default in `_config.yml`). Every post's `:title` permalink segment comes from the **filename**, not the front-matter `title:`.
+- `assets/img/posts/<slug>/` — per-post images and animations, one folder per post, named after the post's `:title` slug (the filename minus the `YYYY-MM-DD-` prefix and `.md` extension — the same string used in the permalink). Referenced from post markdown/HTML with absolute paths like `/assets/img/posts/<slug>/name.png`.
 
 **Plugins (configured in `_config.yml` and `Gemfile`):**  
 `jekyll-feed`, `jekyll-seo-tag`, `jekyll-sitemap`. The `{% seo %}` tag in `default.html` handles meta tags automatically from `_config.yml` fields. (`jekyll-paginate` is listed in the `Gemfile` but was never added to `_config.yml`'s `plugins:` list, and nothing in the site uses it.)
 
 **Blog taxonomy:** Every post must set `categories` to exactly one of `learning`, `mentoring`, or `misc` — this determines both which section page it appears on and its permalink prefix (`permalink: /:categories/:year/:month/:day/:title/` in `_config.yml`). `tags` are freeform and optional:
 - **Learning** (`/learning/`) — reverse-chronological, with a client-side tag filter (`assets/js/tag-filter.js`) driven by whatever tags appear on Learning posts.
-- **Mentoring** (`/mentoring/`) — not chronological; grouped by tag as a scannable reference list. Untagged Mentoring posts fall into a "General" group so nothing is dropped.
-- **Misc** (`/misc/`) — reverse-chronological dated posts, plus an optional card area for standalone "living pages" listed in `_data/misc_pages.yml` (empty by default).
+- **Mentoring** (`/mentoring/`) — reverse-chronological, with the same tag-filter pattern as Learning.
+- **Misc** (`/misc/`) — reverse-chronological dated posts, with the same tag-filter pattern as Learning, plus an optional card area for standalone "living pages" listed in `_data/misc_pages.yml` (empty by default).
+
+All three section pages share their tag-filter + post-list markup via `_includes/tag-filtered-posts.html` (parameterized by `category`). `/blog/` itself is a static card grid (`.hub-cards`/`.hub-card`) linking to each section — not a post feed.
 
 No pagination is used on any of these pages.

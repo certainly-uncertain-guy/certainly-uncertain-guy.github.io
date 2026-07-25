@@ -6,48 +6,20 @@ permalink: /blog/
 
 <section class="blog-section">
   <div class="container">
-
-    <div class="link-group">
-      <h2 class="link-group-title hub-title"><a href="{{ '/learning/' | relative_url }}">Learning</a></h2>
-      <ul class="link-list">
-        {% if site.categories.learning %}
-          {% assign learning_posts = site.categories.learning | sort: "date" | reverse %}
-        {% else %}
-          {% assign learning_posts = empty %}
-        {% endif %}
-        {% for post in learning_posts %}
-          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
+    <div class="hub-list">
+      <article class="hub-card">
+        <h2 class="hub-title"><a href="{{ '/learning/' | relative_url }}">Learning</a></h2>
+        <p class="hub-excerpt"> This is like my lab notebook. I write blogs here to sharpen my own understanding as much as to share it.</p>
+      </article>
+      <article class="hub-card">
+        <h2 class="hub-title"><a href="{{ '/mentoring/' | relative_url }}">Mentoring</a></h2>
+        <p class="hub-excerpt"> A reference library for the boring-but-important stuff I saw myself repeating to students/interns/fresh grads. This will be populated with guidelines on things like how to make PPTs, use GitHub, and do communication with leaders. Almost all of it is me copy-pasting things I learnt from my mentors.
+        </p>
+      </article>
+      <article class="hub-card">
+        <h2 class="hub-title"><a href="{{ '/misc/' | relative_url }}">Misc</a></h2>
+        <p class="hub-excerpt">Everything else that doesn't fit under Learning or Mentoring. The junk drawer, in the best sense.</p>
+      </article>
     </div>
-
-    <div class="link-group">
-      <h2 class="link-group-title hub-title"><a href="{{ '/mentoring/' | relative_url }}">Mentoring</a></h2>
-      <ul class="link-list">
-        {% if site.categories.mentoring %}
-          {% assign mentoring_posts = site.categories.mentoring | sort: "title" %}
-        {% else %}
-          {% assign mentoring_posts = empty %}
-        {% endif %}
-        {% for post in mentoring_posts %}
-          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="link-group">
-      <h2 class="link-group-title hub-title"><a href="{{ '/misc/' | relative_url }}">Misc</a></h2>
-      <ul class="link-list">
-        {% if site.categories.misc %}
-          {% assign misc_posts = site.categories.misc | sort: "date" | reverse %}
-        {% else %}
-          {% assign misc_posts = empty %}
-        {% endif %}
-        {% for post in misc_posts %}
-          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-
   </div>
 </section>

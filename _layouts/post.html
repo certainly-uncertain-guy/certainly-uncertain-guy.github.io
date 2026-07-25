@@ -17,13 +17,33 @@ layout: default
     {{ content }}
   </div>
 
+  {% assign post_category = page.categories | first %}
+  {% assign category_posts = site.categories[post_category] %}
+  {% if category_posts %}
+    {% assign category_posts = category_posts | sort: "date" | reverse %}
+    {% assign current_index = nil %}
+    {% for post in category_posts %}
+      {% if post.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+    {% if current_index > 0 %}
+      {% assign previous_index = current_index | minus: 1 %}
+      {% assign previous_post = category_posts[previous_index] %}
+    {% endif %}
+    {% assign next_index = current_index | plus: 1 %}
+    {% if current_index and next_index < category_posts.size %}
+      {% assign next_post = category_posts[next_index] %}
+    {% endif %}
+  {% endif %}
+
   <div class="post-navigation container">
     <div class="post-nav-links">
-      {% if page.previous.url %}
-        <a class="prev-post" href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+      {% if previous_post %}
+        <a class="prev-post" href="{{ previous_post.url }}">&laquo; {{ previous_post.title }}</a>
       {% endif %}
-      {% if page.next.url %}
-        <a class="next-post" href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+      {% if next_post %}
+        <a class="next-post" href="{{ next_post.url }}">{{ next_post.title }} &raquo;</a>
       {% endif %}
     </div>
   </div>
