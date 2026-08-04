@@ -15,6 +15,7 @@
   --light-background: #F6F1ED;
   --border-color: #e5e7eb;
   --footer-bg: #F6F1ED;
+  --note-color: #2563eb;
 }
 
 /* Dark theme variables */
@@ -28,6 +29,7 @@
   --light-background: #111827;
   --border-color: #374151;
   --footer-bg: #111827;
+  --note-color: #60a5fa;
 }
 
 /* Base styles */
@@ -373,7 +375,12 @@ a:hover {
   color: var(--secondary-color) !important;
 }
 
-.post-content img, 
+.post-content .note,
+.page-content .note {
+  color: var(--note-color);
+}
+
+.post-content img,
 .page-content img {
   max-width: 100%;
   height: auto;
