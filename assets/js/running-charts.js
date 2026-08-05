@@ -290,6 +290,38 @@ RunningCharts.renderHrTrendChart = function (records) {
   });
 };
 
+RunningCharts.renderCadenceTrendChart = function (records) {
+  var canvas = document.getElementById('chart-cadence-trend');
+  if (!canvas) return;
+  var agg = RunningCharts._monthlyAgg(records, 'avg_cadence', 'avg');
+  var colors = RunningCharts.chartColors();
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: agg.labels,
+      datasets: [{
+        label: 'Avg cadence (spm)',
+        data: agg.values.map(function (v) { return Math.round(v); }),
+        borderColor: colors.series1,
+        backgroundColor: colors.series1,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        tension: 0.15
+      }]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { ticks: { color: colors.mutedText, maxRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { display: false } },
+        y: { ticks: { color: colors.mutedText }, grid: { color: colors.grid } }
+      },
+      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } }
+    }
+  });
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.getElementById('stat-row')) return;
   RunningCharts.loadData(function (records) {
