@@ -16,6 +16,8 @@
   --border-color: #e5e7eb;
   --footer-bg: #F6F1ED;
   --note-color: #2563eb;
+  --chart-series-1: #2563eb;
+  --chart-series-2: #eb6834;
 }
 
 /* Dark theme variables */
@@ -30,6 +32,8 @@
   --border-color: #374151;
   --footer-bg: #111827;
   --note-color: #60a5fa;
+  --chart-series-1: #3987e5;
+  --chart-series-2: #d95926;
 }
 
 /* Base styles */
@@ -688,4 +692,116 @@ a:hover {
 
 .misc-page-card:hover {
   transform: translateY(-5px);
+}
+
+/* Running stats post */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-tile {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.stat-tile-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-tile-label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+
+.chart-section {
+  margin: 3rem 0;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.chart-subtitle {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
+
+.chart-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.chart-legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.us-map-wrap {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.us-map-svg {
+  width: 100%;
+  height: auto;
+  background-color: var(--light-background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.us-map-bubble {
+  fill: var(--chart-series-1);
+  fill-opacity: 0.55;
+  stroke: var(--chart-series-1);
+  stroke-width: 1;
+  cursor: default;
+}
+
+.us-map-bubble:hover {
+  fill-opacity: 0.85;
+}
+
+.us-map-label {
+  fill: var(--light-text);
+  font-size: 11px;
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+}
+
+.us-map-footnote {
+  font-size: 0.85rem;
+  color: var(--light-text);
+  text-align: center;
+  margin-top: 0.75rem;
 }
