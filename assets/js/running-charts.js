@@ -167,6 +167,129 @@ RunningCharts.renderBuildupChart = function (records) {
   });
 };
 
+RunningCharts._monthlyAgg = function (records, valueKey, aggType, filterFn) {
+  var months = {};
+  records.forEach(function (r) {
+    if (filterFn && !filterFn(r)) return;
+    var v = r[valueKey];
+    if (v == null) return;
+    var mk = r.date.slice(0, 7); // YYYY-MM
+    if (!months[mk]) months[mk] = { sum: 0, count: 0 };
+    months[mk].sum += v;
+    months[mk].count += 1;
+  });
+  var labels = Object.keys(months).sort();
+  var values = labels.map(function (mk) {
+    var m = months[mk];
+    return aggType === 'sum' ? m.sum : m.sum / m.count;
+  });
+  return { labels: labels, values: values };
+};
+
+RunningCharts.renderMonthlyMileageChart = function (records) {
+  var canvas = document.getElementById('chart-monthly-mileage');
+  if (!canvas) return;
+  var agg = RunningCharts._monthlyAgg(records, 'distance_km', 'sum');
+  var colors = RunningCharts.chartColors();
+  new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: agg.labels,
+      datasets: [{
+        label: 'Monthly distance (km)',
+        data: agg.values.map(function (v) { return Math.round(v); }),
+        backgroundColor: colors.series1,
+        borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        x: { ticks: { color: colors.mutedText, maxRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { display: false } },
+        y: { ticks: { color: colors.mutedText }, grid: { color: colors.grid } }
+      },
+      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } }
+    }
+  });
+};
+
+RunningCharts.renderPaceTrendChart = function (records) {
+  var canvas = document.getElementById('chart-pace-trend');
+  if (!canvas) return;
+  var agg = RunningCharts._monthlyAgg(records, 'avg_pace_s_per_km', 'avg', function (r) { return r.distance_km >= 3; });
+  var colors = RunningCharts.chartColors();
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: agg.labels,
+      datasets: [{
+        label: 'Avg pace (s/km, lower = faster)',
+        data: agg.values.map(function (v) { return Math.round(v); }),
+        borderColor: colors.series1,
+        backgroundColor: colors.series1,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        tension: 0.15
+      }]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { ticks: { color: colors.mutedText, maxRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { display: false } },
+        y: {
+          reverse: true,
+          ticks: {
+            color: colors.mutedText,
+            callback: function (v) { return RunningCharts.formatPace(v); }
+          },
+          grid: { color: colors.grid }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          mode: 'index', intersect: false,
+          callbacks: { label: function (ctx) { return RunningCharts.formatPace(ctx.parsed.y); } }
+        }
+      }
+    }
+  });
+};
+
+RunningCharts.renderHrTrendChart = function (records) {
+  var canvas = document.getElementById('chart-hr-trend');
+  if (!canvas) return;
+  var agg = RunningCharts._monthlyAgg(records, 'avg_hr', 'avg');
+  var colors = RunningCharts.chartColors();
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: agg.labels,
+      datasets: [{
+        label: 'Avg heart rate (bpm)',
+        data: agg.values.map(function (v) { return Math.round(v); }),
+        borderColor: colors.series1,
+        backgroundColor: colors.series1,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        tension: 0.15
+      }]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { ticks: { color: colors.mutedText, maxRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { display: false } },
+        y: { ticks: { color: colors.mutedText }, grid: { color: colors.grid } }
+      },
+      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } }
+    }
+  });
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.getElementById('stat-row')) return;
   RunningCharts.loadData(function (records) {
