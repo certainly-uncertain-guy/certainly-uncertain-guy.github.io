@@ -2,11 +2,12 @@
 """Convert Garmin Activities CSV export into assets/data/running.json."""
 import csv
 import json
-import re
 import sys
 from datetime import datetime
 
-CSV_PATH = "/Users/ashutosh/Downloads/Activities-2.csv"
+# Path to the Garmin CSV export. Override by passing it as the first argument:
+#   python3 scripts/process_running_data.py /path/to/Activities.csv
+CSV_PATH = sys.argv[1] if len(sys.argv) > 1 else "/Users/ashutosh/Downloads/Activities-2.csv"
 OUT_PATH = "assets/data/running.json"
 
 CITY_ALIASES = {
@@ -119,6 +120,11 @@ def main():
                 "lat": lat,
                 "lng": lng,
                 "distance_km": parse_float(row["Distance"]),
+                # `time_s` is the elapsed/official finish time from the CSV's
+                # `Time` column; `moving_time_s` excludes auto-paused stretches.
+                # The hero stats use `time_s` so the marathon shows its real
+                # finish time.
+                "time_s": parse_hms_seconds(row["Time"]),
                 "moving_time_s": parse_hms_seconds(row["Moving Time"]),
                 "avg_hr": parse_int(row["Avg HR"]),
                 "max_hr": parse_int(row["Max HR"]),

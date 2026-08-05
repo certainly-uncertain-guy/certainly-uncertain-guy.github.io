@@ -62,29 +62,65 @@ var RunningMap = (function () {
     var labelCandidates = geo.filter(function (g) { return g.r >= LABEL_MIN_R; });
     labelCandidates.sort(function (a, b) { return b.r - a.r; });
 
+    // Candidate anchor positions, tried in order of preference. A single fixed
+    // position drops labels entirely in dense clusters (the Bay Area cities
+    // project within a few pixels of each other at this scale, which cost San
+    // Francisco — the post's narrative anchor — its label). Standard greedy
+    // placement: take the first candidate that neither overlaps an already
+    // placed label nor falls outside the viewBox.
+    function anchorCandidates(g, w, h) {
+      var x = g.pos[0], y = g.pos[1], r = g.r;
+      var above = y - r - 4;
+      var below = y + r + h;
+      var mid = y + h / 3;
+      return [
+        { x: x, y: above, anchor: 'middle' },
+        { x: x, y: below, anchor: 'middle' },
+        { x: x + r + 4, y: mid, anchor: 'start' },
+        { x: x - r - 4, y: mid, anchor: 'end' },
+        { x: x + r + 4, y: above, anchor: 'start' },
+        { x: x - r - 4, y: above, anchor: 'end' },
+        { x: x + r + 4, y: below, anchor: 'start' },
+        { x: x - r - 4, y: below, anchor: 'end' }
+      ].map(function (c) {
+        var left = c.anchor === 'middle' ? c.x - w / 2 : (c.anchor === 'start' ? c.x : c.x - w);
+        c.box = { left: left, right: left + w, top: c.y - h, bottom: c.y };
+        return c;
+      });
+    }
+
+    function inBounds(box) {
+      return box.left >= 0 && box.right <= VIEWBOX_W && box.top >= 0 && box.bottom <= VIEWBOX_H;
+    }
+
+    function collides(box) {
+      return placed.some(function (p) {
+        return box.left < p.right && box.right > p.left && box.top < p.bottom && box.bottom > p.top;
+      });
+    }
+
     labelCandidates.forEach(function (g) {
       var w = g.city.length * LABEL_CHAR_W;
       var h = LABEL_H;
-      var labelY = g.pos[1] - g.r - 4;
-      var box = {
-        left: g.pos[0] - w / 2,
-        right: g.pos[0] + w / 2,
-        top: labelY - h,
-        bottom: labelY
-      };
-      var overlaps = placed.some(function (p) {
-        return box.left < p.right && box.right > p.left && box.top < p.bottom && box.bottom > p.top;
-      });
-      if (overlaps) return;
+      var chosen = null;
+      var candidates = anchorCandidates(g, w, h);
+      for (var i = 0; i < candidates.length; i++) {
+        if (inBounds(candidates[i].box) && !collides(candidates[i].box)) {
+          chosen = candidates[i];
+          break;
+        }
+      }
+      // Every anchor position is taken or off-canvas — drop this label.
+      if (!chosen) return;
 
       var label = document.createElementNS(ns, 'text');
-      label.setAttribute('x', g.pos[0]);
-      label.setAttribute('y', labelY);
+      label.setAttribute('x', chosen.x);
+      label.setAttribute('y', chosen.y);
       label.setAttribute('class', 'us-map-label');
-      label.setAttribute('text-anchor', 'middle');
+      label.setAttribute('text-anchor', chosen.anchor);
       label.textContent = g.city;
       svg.appendChild(label);
-      placed.push(box);
+      placed.push(chosen.box);
     });
 
     if (footnote && mumbaiCount > 0) {
