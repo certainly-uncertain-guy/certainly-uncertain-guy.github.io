@@ -31,9 +31,9 @@ Once the points you want to make are settled and the logic and reasoning behind 
 5. Meeting in person
 6. Whiteboard session
 7. PowerPoint presentation
-8.  Beamer
+8. Beamer
 
-If the answer is a word document, LaTeX document, or Markdown file, see [this post](/mentoring/2026/07/16/running-a-research-project/) for guidance on writing; further questions can always be discussed directly. If the answer is email, consider reading about smart brevity, and consider asking Claude to rewrite the message in that style. If the answer is a meeting in person or a whiteboard session, reach out directly to plan it. If the answer is a PowerPoint presentation or Beamer, continue reading below. 
+If the answer is a word document, LaTeX document, or Markdown file, see [this post](/mentoring/2026/07/16/running-a-research-project/) for guidance on writing; further questions can always be discussed directly. Two other good guides worth reading are [these notes by my advisor Dr. Erhan Kutanoglu on writing a good report](/assets/pdf/Dr_K_guidelines.pdf) and [Whitesides' group guide to writing a paper](/assets/pdf/Whitesides_writing_res_paper.pdf). If the answer is email, consider reading about smart brevity, and consider asking Claude to rewrite the message in that style. If the answer is a meeting in person or a whiteboard session, reach out directly to plan it. If the answer is a PowerPoint presentation or Beamer, continue reading below. 
 
 ## Pointers for making a PowerPoint/Beamer presentation
 
@@ -52,10 +52,45 @@ When it becomes unavoidable to put a large amount of information on a single sli
 
 That talk can also serve as a reference to build on and improve further; it is from graduate school days :) If your presentation does a better job of explaining these principles, I will swap mine for yours.
 
+## After you have made your presentation
+
+It helps to imagine your talk being judged along two separate dimensions: how well it lands the content, and how well it lands as a piece of communication. These are the kinds of things a judge (or, really, any attentive audience member) is checking for.
+
+On comprehension and content:
+
+1. Does the presentation explain the background and significance of the question being addressed, while explaining terminology and avoiding jargon?
+2. Does it clearly describe the impact and/or results of the work, including conclusions and outcomes?
+3. Does it follow a clear and logical sequence?
+4. Is the topic, its significance, and its results communicated in language appropriate for a non-specialist audience?
+5. Is adequate time spent on each part of the presentation, or does it elaborate too long on one aspect while rushing through others?
+
+On engagement and communication:
+
+1. Does the talk make the audience want to know more?
+2. Is the presenter careful not to trivialize or over-generalize the findings?
+3. Does the presenter convey genuine enthusiasm for the work?
+4. Does the presenter capture and hold the audience's attention?
+5. Is there sufficient stage presence: eye contact, vocal range, a steady pace, and a confident stance?
+6. Do the slides enhance the presentation — are they clear, legible, and concise?
+
+Running through both lists before you present is a good way to catch problems while there is still time to fix them.
+
+## Right before you present
+1. Take a bottle of water up with you. Even if you are not thirsty, having it gives you a natural excuse to pause for a second if you lose your train of thought or need a moment to collect your thoughts.
+2. Speak slowly, and pause strategically between points so each idea has time to land before you move to the next one.
+3. Make eye contact with the room as a whole rather than fixating on one person. Scan around so everyone feels included.
+4. If something goes wrong, resist the urge to apologize. A simple "bear with me" or "just a minute" carries you through far better than drawing attention to the mistake. The same discipline helps with filler words like "um" and "you know"; breathing naturally and slowing down does more to cut these out than consciously trying to avoid them.
+5. Stay aware of your nervous habits. If you tend to fidget with a watch, take it off before you start; if you play with your hair, tie it up so you are not tempted. Let your body language support what you are saying rather than compete with it. Hand gestures should reinforce the point, not distract from it. If a line lands and the audience laughs, let the laughter settle before continuing rather than talking over it. And when you get applause, take it in and smile, rather than rushing past it.
+
 ## Special note for final presentations
 After you finish your internship/project, you are typically expected to give one final PowerPoint presentation. Over time, I have found that the following funnel-shaped presentation structure works quite well for such talks. You start with a very broad question that every audience member can understand, then take them on a journey through the specifics, discussing your contributions and why they matter. Lastly, you zoom back out to the scope of your impact: the high-level changes it will bring. The rough flow is as follows:
 
-1. Why study this topic
+1. Why study this topic. Open with something that earns the audience's attention before you get into specifics, rather than starting flat. A few techniques worth knowing:
+   - Rhetorical question: ask something the audience is not meant to answer aloud, but that gets them thinking as you continue.
+   - Startling statistic or fact: open with a number or fact stark enough that the room sits up and takes notice, ideally one the audience would not have guessed.
+   - Sensory technique: describe a scene in enough detail that the audience can picture or recall it themselves, so they engage with the topic before you have made a single argument.
+   - Narrative: if the topic is data heavy, a short story about someone affected by the problem makes the numbers that follow land harder.
+   Pick whichever fits the topic and the room; one well executed hook is enough, there is no need to stack all four.
 2. What is the knowledge gap
 3. What is the objective of the study
 4. Summary of results and contributions
