@@ -48,6 +48,16 @@ If a logo needs to be included, keep it small and place it in the top right corn
 
 When PowerPoint first opens, it shows a default placeholder that says something like click here to add title. These placeholders should not be moved; write directly into them so titles stay aligned. Wherever possible, duplicate slides so formatting stays consistent and only the core text changes.
 
-When it becomes unavoidable to put a large amount of information on a single slide, such as an entire mathematical model, use a transparent curtain style template. For reference, see slides 19-22 through twenty two in [this sample talk](/assets/pdf/sample_talk.pdf). This approach lets the curtain drop down across the slide so the audience sees only a small amount of additional content at a time, and that content can be tied back to the rest of the context. By the end, when the audience has seen 10-20 equations on the slide, they understand exactly how everything connects and how it is thematically organized.
+When it becomes unavoidable to put a large amount of information on a single slide, such as an entire mathematical model, use a transparent curtain style template. For reference, see slides 19-22 in [this sample talk](/assets/pdf/sample_talk.pdf). This approach lets the curtain drop down across the slide so the audience sees only a small amount of additional content at a time, and that content can be tied back to the rest of the context. By the end, when the audience has seen 10-20 equations on the slide, they understand exactly how everything connects and how it is thematically organized.
 
 That talk can also serve as a reference to build on and improve further; it is from graduate school days :) If your presentation does a better job of explaining these principles, I will swap mine for yours.
+
+## Special note for final presentations
+After you finish your internship/project, you are typically expected to give one final PowerPoint presentation. Over time, I have found that the following funnel-shaped presentation structure works quite well for such talks. You start with a very broad question that every audience member can understand, then take them on a journey through the specifics, discussing your contributions and why they matter. Lastly, you zoom back out to the scope of your impact: the high-level changes it will bring. The rough flow is as follows:
+
+1. Why study this topic
+2. What is the knowledge gap
+3. What is the objective of the study
+4. Summary of results and contributions
+5. Broader implications
+6. Further research directions
