@@ -760,6 +760,20 @@ a:hover {
   border-radius: 0.5rem;
 }
 
+.us-map-state-border {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 0.75;
+  vector-effect: non-scaling-stroke;
+}
+
+.us-map-nation-border {
+  fill: none;
+  stroke: var(--light-text);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+
 .us-map-bubble {
   fill: var(--chart-series-1);
   fill-opacity: 0.55;

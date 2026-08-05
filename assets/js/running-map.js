@@ -1,6 +1,7 @@
 var RunningMap = (function () {
   var VIEWBOX_W = 960, VIEWBOX_H = 600;
   var LNG_MIN = -125, LNG_MAX = -66, LAT_MIN = 24, LAT_MAX = 50;
+  var US_ATLAS_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
 
   function project(lat, lng) {
     var x = (lng - LNG_MIN) / (LNG_MAX - LNG_MIN) * VIEWBOX_W;
@@ -8,10 +9,60 @@ var RunningMap = (function () {
     return [x, y];
   }
 
+  // Draws the state + national outline beneath the bubbles. Runs async and
+  // fails silently (bubbles alone still tell the story) since it depends on
+  // a CDN fetch; states-10m.json ships unprojected lon/lat coordinates, so
+  // the same linear `project()` used for city bubbles keeps everything
+  // aligned. Alaska/Hawaii/territories simply project outside the viewBox
+  // and get clipped by the SVG viewport — no explicit filtering needed since
+  // they share no border arcs with the continental states.
+  function renderOutline(svg) {
+    if (typeof topojson === 'undefined' || typeof fetch === 'undefined') return;
+
+    fetch(US_ATLAS_URL)
+      .then(function (res) { return res.json(); })
+      .then(function (topology) {
+        var states = topology.objects.states;
+        var ns = 'http://www.w3.org/2000/svg';
+
+        function meshPath(filter) {
+          var mesh = topojson.mesh(topology, states, filter);
+          return mesh.coordinates.map(function (line) {
+            return line.map(function (pt, i) {
+              var xy = project(pt[1], pt[0]);
+              return (i === 0 ? 'M' : 'L') + xy[0].toFixed(1) + ',' + xy[1].toFixed(1);
+            }).join(' ');
+          }).join(' ');
+        }
+
+        var group = document.createElementNS(ns, 'g');
+        group.setAttribute('class', 'us-map-outline-group');
+
+        var interior = document.createElementNS(ns, 'path');
+        interior.setAttribute('d', meshPath(function (a, b) { return a !== b; }));
+        interior.setAttribute('class', 'us-map-state-border');
+        group.appendChild(interior);
+
+        var exterior = document.createElementNS(ns, 'path');
+        exterior.setAttribute('d', meshPath(function (a, b) { return a === b; }));
+        exterior.setAttribute('class', 'us-map-nation-border');
+        group.appendChild(exterior);
+
+        // Inserted as the first child regardless of when the fetch resolves,
+        // so it always paints beneath bubbles/labels added by render().
+        svg.insertBefore(group, svg.firstChild);
+      })
+      .catch(function (err) {
+        console.error('US map outline failed to load; showing bubbles only.', err);
+      });
+  }
+
   function render(records) {
     var svg = document.getElementById('us-map-svg');
     var footnote = document.getElementById('us-map-footnote');
     if (!svg) return;
+
+    renderOutline(svg);
 
     var byCity = {};
     var mumbaiCount = 0;

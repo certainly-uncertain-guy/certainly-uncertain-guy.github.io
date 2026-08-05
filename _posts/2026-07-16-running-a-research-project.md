@@ -1,5 +1,5 @@
 ---
-title: "Running a Research Project"
+title: "Starting a research project"
 date: 2026-07-16
 categories: [mentoring]
 tags: [research, writing, process]

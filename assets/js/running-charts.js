@@ -197,28 +197,31 @@ RunningCharts.renderBuildupChart = function (records) {
   // The runner has trained for prior race cycles too, so the regex above can
   // sweep in unrelated earlier blocks. Within-cycle gaps (missed days/weeks)
   // stay well under a month; a gap of a month or more marks a break between
-  // cycles. Keep only the continuous block that starts right after the LAST
-  // such break (i.e. the current build-up through the marathon) — not just
-  // the single largest gap, since an isolated stray run from an even older
-  // cycle can otherwise create the largest gap without separating the most
-  // recent unrelated cycle from the real one.
+  // cycles. Split into blocks at every such break, then drop blocks with only
+  // a run or two — those read as stray leftovers from an even older cycle,
+  // not a real attempt. Keep the last two real blocks: the post's narrative
+  // is the fizzled mid-2025 attempt followed by the build-up that stuck, and
+  // both need to be on the chart for that story to be visible rather than
+  // just asserted in prose.
   var CYCLE_BREAK_DAYS = 30;
-  if (trainingRuns.length > 1) {
-    var cutIndex = 0;
-    for (var i = 1; i < trainingRuns.length; i++) {
-      var gapDays = (new Date(trainingRuns[i].date) - new Date(trainingRuns[i - 1].date)) / 86400000;
-      if (gapDays >= CYCLE_BREAK_DAYS) {
-        cutIndex = i;
-      }
+  var MIN_BLOCK_RUNS = 3;
+  var blocks = trainingRuns.length ? [[trainingRuns[0]]] : [];
+  for (var i = 1; i < trainingRuns.length; i++) {
+    var gapDays = (new Date(trainingRuns[i].date) - new Date(trainingRuns[i - 1].date)) / 86400000;
+    if (gapDays >= CYCLE_BREAK_DAYS) {
+      blocks.push([]);
     }
-    trainingRuns = trainingRuns.slice(cutIndex);
+    blocks[blocks.length - 1].push(trainingRuns[i]);
   }
+  var realBlocks = blocks.filter(function (b) { return b.length >= MIN_BLOCK_RUNS; });
+  var keptBlocks = realBlocks.length ? realBlocks.slice(-2) : blocks.slice(-1);
+  trainingRuns = [].concat.apply([], keptBlocks);
 
   // Race day itself is titled "San Francisco Running" — no " - " separator and
   // no training code — so the filter above drops it. The post's caption says
   // the chart runs "through race day", so append the marathon explicitly.
-  // This happens *after* the gap slice so the appended record cannot be cut
-  // away, and so it cannot influence the cycle-break detection.
+  // This happens *after* the block selection so the appended record cannot be
+  // dropped, and so it cannot influence the cycle-break detection.
   var marathon = RunningCharts.findMarathon(records);
   if (marathon && trainingRuns.indexOf(marathon) === -1) {
     trainingRuns.push(marathon);
@@ -250,10 +253,21 @@ RunningCharts.renderBuildupChart = function (records) {
     }
   });
 
-  var labels = Object.keys(weeks).sort();
-  var totals = labels.map(function (wk) { return Math.round(weeks[wk].total * 10) / 10; });
+  // Build the full run of weeks from first to last, not just weeks that have
+  // data. `weeks` alone would silently skip straight from the last week of
+  // the fizzled 2025 attempt to the first week of the 2026 build-up, making
+  // the multi-month gap between them invisible on a category axis.
+  var sortedWeekKeys = Object.keys(weeks).sort();
+  var labels = [];
+  var cursor = new Date(sortedWeekKeys[0] + 'T00:00:00Z');
+  var lastWeek = new Date(sortedWeekKeys[sortedWeekKeys.length - 1] + 'T00:00:00Z');
+  while (cursor <= lastWeek) {
+    labels.push(cursor.toISOString().slice(0, 10));
+    cursor.setUTCDate(cursor.getUTCDate() + 7);
+  }
+  var totals = labels.map(function (wk) { return weeks[wk] ? Math.round(weeks[wk].total * 10) / 10 : 0; });
   var longRuns = labels.map(function (wk) {
-    var v = weeks[wk].longRun;
+    var v = weeks[wk] ? weeks[wk].longRun : null;
     return v == null ? null : Math.round(v * 10) / 10;
   });
   var colors = RunningCharts.chartColors();

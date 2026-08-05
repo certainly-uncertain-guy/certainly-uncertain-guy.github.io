@@ -1,5 +1,5 @@
 ---
-title: "Rethinking our 1:1s"
+title: "Rethinking 1:1s"
 date: 2026-07-16
 categories: [mentoring]
 tags: [communication, process]
