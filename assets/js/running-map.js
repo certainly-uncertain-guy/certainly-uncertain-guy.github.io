@@ -29,30 +29,62 @@ var RunningMap = (function () {
     // only label bubbles above that radius directly, per the dataviz skill's
     // "selective direct labels" rule (never a label on every mark).
     var LABEL_MIN_R = 8;
+    // Approximate label glyph metrics for the 11px .us-map-label font, used
+    // only for the collision-avoidance bounding-box check below.
+    var LABEL_CHAR_W = 6.5;
+    var LABEL_H = 12;
 
-    Object.keys(byCity).forEach(function (city) {
+    var cityNames = Object.keys(byCity);
+    var placed = []; // circle/title always render; only text labels are collision-checked
+
+    // Compute geometry for every city up front so labels can be placed in
+    // radius-descending order (biggest/most-important city wins ties for
+    // space) independent of Object.keys() iteration order.
+    var geo = cityNames.map(function (city) {
       var info = byCity[city];
       var pos = project(info.lat, info.lng);
       var r = 4 + 22 * Math.sqrt(info.distance / maxDistance);
+      return { city: city, info: info, pos: pos, r: r };
+    });
+
+    geo.forEach(function (g) {
       var circle = document.createElementNS(ns, 'circle');
-      circle.setAttribute('cx', pos[0]);
-      circle.setAttribute('cy', pos[1]);
-      circle.setAttribute('r', r.toFixed(1));
+      circle.setAttribute('cx', g.pos[0]);
+      circle.setAttribute('cy', g.pos[1]);
+      circle.setAttribute('r', g.r.toFixed(1));
       circle.setAttribute('class', 'us-map-bubble');
       var title = document.createElementNS(ns, 'title');
-      title.textContent = city + ': ' + Math.round(info.distance) + ' km across ' + info.count + ' runs';
+      title.textContent = g.city + ': ' + Math.round(g.info.distance) + ' km across ' + g.info.count + ' runs';
       circle.appendChild(title);
       svg.appendChild(circle);
+    });
 
-      if (r >= LABEL_MIN_R) {
-        var label = document.createElementNS(ns, 'text');
-        label.setAttribute('x', pos[0]);
-        label.setAttribute('y', pos[1] - r - 4);
-        label.setAttribute('class', 'us-map-label');
-        label.setAttribute('text-anchor', 'middle');
-        label.textContent = city;
-        svg.appendChild(label);
-      }
+    var labelCandidates = geo.filter(function (g) { return g.r >= LABEL_MIN_R; });
+    labelCandidates.sort(function (a, b) { return b.r - a.r; });
+
+    labelCandidates.forEach(function (g) {
+      var w = g.city.length * LABEL_CHAR_W;
+      var h = LABEL_H;
+      var labelY = g.pos[1] - g.r - 4;
+      var box = {
+        left: g.pos[0] - w / 2,
+        right: g.pos[0] + w / 2,
+        top: labelY - h,
+        bottom: labelY
+      };
+      var overlaps = placed.some(function (p) {
+        return box.left < p.right && box.right > p.left && box.top < p.bottom && box.bottom > p.top;
+      });
+      if (overlaps) return;
+
+      var label = document.createElementNS(ns, 'text');
+      label.setAttribute('x', g.pos[0]);
+      label.setAttribute('y', labelY);
+      label.setAttribute('class', 'us-map-label');
+      label.setAttribute('text-anchor', 'middle');
+      label.textContent = g.city;
+      svg.appendChild(label);
+      placed.push(box);
     });
 
     if (footnote && mumbaiCount > 0) {
