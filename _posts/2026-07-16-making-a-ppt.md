@@ -6,7 +6,7 @@ tags: [communication, process]
 excerpt: "A general guide to putting together a clear, effective presentation — wherever you work."
 ---
 
-A presentation means presenting an idea, finding, recommendation, or a take on something. Making a presentation should therefore never default to assuming that a PowerPoint presentation is required. Notice that the name is PowerPoint, which implies it is a tool for powering points that already exist. This only makes sense when there are points to make in the first place.
+A presentation exists to convey an idea, a finding, a recommendation, or a take on something. Making a presentation should never default to assuming that a PowerPoint presentation is required. Notice that the name is PowerPoint, which implies it is a tool for powering points that already exist. This only makes sense when there are points to make in the first place.
 
 A common pattern that I see among several people is that they jump straight to making a PowerPoint presentation without first making sure that they have a point to make. In my experience, it is surprisingly hard to first ponder, then organize, ideas, data, and analysis, and only then convert all of that into a series of points that build toward a final recommendation or stance on something.
 
@@ -56,7 +56,7 @@ That talk can also serve as a reference to build on and improve further; it is f
 
 It helps to imagine your talk being judged along two separate dimensions: how well it lands the content, and how well it lands as a piece of communication. These are the kinds of things a judge (or, really, any attentive audience member) is checking for.
 
-On comprehension and content:
+**On comprehension and content:**
 
 1. Does the presentation explain the background and significance of the question being addressed, while explaining terminology and avoiding jargon?
 2. Does it clearly describe the impact and/or results of the work, including conclusions and outcomes?
@@ -64,7 +64,7 @@ On comprehension and content:
 4. Is the topic, its significance, and its results communicated in language appropriate for a non-specialist audience?
 5. Is adequate time spent on each part of the presentation, or does it elaborate too long on one aspect while rushing through others?
 
-On engagement and communication:
+**On engagement and communication:**
 
 1. Does the talk make the audience want to know more?
 2. Is the presenter careful not to trivialize or over-generalize the findings?
@@ -82,10 +82,12 @@ Running through both lists before you present is a good way to catch problems wh
 4. If something goes wrong, resist the urge to apologize. A simple "bear with me" or "just a minute" carries you through far better than drawing attention to the mistake. The same discipline helps with filler words like "um" and "you know"; breathing naturally and slowing down does more to cut these out than consciously trying to avoid them.
 5. Stay aware of your nervous habits. If you tend to fidget with a watch, take it off before you start; if you play with your hair, tie it up so you are not tempted. Let your body language support what you are saying rather than compete with it. Hand gestures should reinforce the point, not distract from it. If a line lands and the audience laughs, let the laughter settle before continuing rather than talking over it. And when you get applause, take it in and smile, rather than rushing past it.
 
-## Special note for final presentations
+## Special note for final project presentations
 After you finish your internship/project, you are typically expected to give one final PowerPoint presentation. Over time, I have found that the following funnel-shaped presentation structure works quite well for such talks. You start with a very broad question that every audience member can understand, then take them on a journey through the specifics, discussing your contributions and why they matter. Lastly, you zoom back out to the scope of your impact: the high-level changes it will bring. The rough flow is as follows:
 
-1. Why study this topic. Open with something that earns the audience's attention before you get into specifics, rather than starting flat. A few techniques worth knowing:
+1. Why study this topic:
+   
+   Open with something that earns the audience's attention before you get into specifics, rather than starting flat. A few techniques worth knowing:
    - Rhetorical question: ask something the audience is not meant to answer aloud, but that gets them thinking as you continue.
    - Startling statistic or fact: open with a number or fact stark enough that the room sits up and takes notice, ideally one the audience would not have guessed.
    - Sensory technique: describe a scene in enough detail that the audience can picture or recall it themselves, so they engage with the topic before you have made a single argument.
