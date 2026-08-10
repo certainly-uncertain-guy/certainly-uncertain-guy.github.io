@@ -13,7 +13,7 @@ layout: default
 <p><strong>Research background:</strong> I completed my PhD in Operations Research at UT Austin, where I developed optimization frameworks for infrastructure planning under uncertainty — designing stochastic and robust models with scalable solution methods. My research has been published in peer-reviewed venues and received the Best Student Paper Award at the IISE Annual Conference. I also worked on reinforcement learning for networked systems, including inverse RL for routing policy inference and multi-agent RL for coordinated traffic optimization.</p>
 <h3>News</h3>
 <ul>
-<li><strong>[Jul, 2026]</strong>: Ran the San Francisco Marathon. This was my first marathon! Wrote a <a href="{{ '/misc/2026/08/02/running/' | relative_url }}" style="color: blue; text-decoration: underline;">blog</a> about it!
+<li><strong>[Jul, 2026]</strong>: Ran the San Francisco Marathon. This was my first marathon! Wrote a <a href="{{ '/misc/2026/08/02/running/' | relative_url }}" style="color: blue; text-decoration: underline;">blog</a> about it!</li>
 <li><strong>[Apr, 2026]</strong>: Paper on <a href="https://arxiv.org/pdf/2604.22221" style="color: blue; text-decoration: underline;">Out-of-sample testing of two-stage stochastic programs</a> posted on arXiv</li>
 <li><strong>[Oct, 2025]</strong>: Gave invited talk on "A backtracking heuristic for train-to-fuel-pad assignments" at INFORMS 2025, Atlanta</li>
 <li><strong>[Sep, 2025]</strong>: Paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352467725003558" style="color: blue; text-decoration: underline;">Co-optimizing grid resilience decisions for flooding</a> accepted in Sustainable Energy, Grids and Networks</li>
