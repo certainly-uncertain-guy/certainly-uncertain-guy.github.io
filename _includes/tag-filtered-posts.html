@@ -1,4 +1,8 @@
-{% assign filtered_posts = site.categories[include.category] | default: empty | sort: "date" | reverse %}
+{% assign filtered_posts = site.categories[include.category] %}
+{% unless filtered_posts %}
+  {% assign filtered_posts = "" | split: "," %}
+{% endunless %}
+{% assign filtered_posts = filtered_posts | sort: "date" | reverse %}
 
 <div class="tag-filter" id="tag-filter">
   <button class="tag-pill active" data-tag="all" type="button">All</button>

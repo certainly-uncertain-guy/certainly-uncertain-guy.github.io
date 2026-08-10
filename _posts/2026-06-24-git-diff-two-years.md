@@ -4,6 +4,7 @@ date: 2026-06-24
 categories: [learning]
 tags: [career, operations-research, industry-lessons, leadership]
 excerpt: "Two years after leaving grad school for BNSF Railway — what I got wrong about which part of the job is hardest, and what actually moves a model from a repo to production."
+published: false
 ---
 June 3, 2026 marked two years since I finished grad school and joined BNSF Railway. Since then, I have been reflecting on the lessons I learned over these two years, and because they still feel fresh, I am making an attempt to put them on paper. The idea is that through essays like this, I can watch how my worldview evolves with time.
 

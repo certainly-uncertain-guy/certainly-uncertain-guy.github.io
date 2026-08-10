@@ -4,6 +4,7 @@ date: 2026-07-16
 categories: [learning]
 tags: [software-design, python]
 excerpt: "How decorators actually work under the hood, and the cases where they make code clearer instead of more confusing."
+published: false
 ---
 ## The problem I ran into
 

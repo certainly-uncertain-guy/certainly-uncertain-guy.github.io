@@ -9,17 +9,17 @@ During my PhD, I converged to a process that I now follow to run a research proj
 
 ## Setting up a project
 
-Start every research endeavor as a LaTeX project, even before you know exactly where it is headed. Give it a preamble, and a running notebook file that will have a log of time-stamped entries describing what you did and why. It's cheap to keep and invaluable when you need to reconstruct how a result came about.
+Start every research/project as a LaTeX/Markdown project folder, even before you know exactly where it is headed. Give it a preamble, and a running notebook file that will have a log of time-stamped entries describing what you did and why. It's cheap to keep and invaluable when you need to reconstruct how a result came about.
 
-Alongside the notebook, create a manuscript file with the skeleton that you will eventually fill in: abstract, introduction, methods, results, discussion and conclusion, acknowledgements, appendix. Having the shape of the paper in front of you from day one makes it easier to see where a new result belongs.
+Alongside the notebook, create a manuscript/markdown file with the skeleton that you will eventually fill in: abstract, introduction, methods, results, discussion and conclusion, acknowledgements, appendix. Having the shape of the paper/final report in front of you from day one makes it easier to see where a new result belongs.
 
-Add a beamer file too, even if no talk is scheduled yet — it's the natural place to keep the slides you'll use for project updates, and starting it early means you're not assembling a talk from scratch under time pressure.
+Add a Beamer/PowerPoint file too, even if no talk is scheduled yet. It should be the natural place to keep the slides you'll use for project updates, and starting it early means you're not assembling a talk from scratch under time pressure.
 
-Finally, start a GitHub repo for the code. Write commit titles and messages that actually describe what changed, not just `wip`. Open issues for things you notice but don't have time to fix. Write a README — future you (and any collaborator) will need it.
+Finally, start a GitHub repo for the code. Write commit titles and messages that actually describe what changed, not just `wip`. Setup a GitHub project for your repository. Open issues for things you notice but don't have time to fix. Write a README — future you (and any collaborator) will need it.
 
 ## Choosing a problem
 
-Before committing to a research problem, answer the Heilmeier Catechism — a set of questions originally used by DARPA to vet proposals, but they work just as well as a personal gut-check:
+Before committing to a research problem, answer the Heilmeier Catechism. These are a set of questions originally used by DARPA to vet proposals, but they work just as well as a personal gut-check:
 
 1. What are you trying to do? State your objective with no jargon.
 2. How is it done today, and what are the limits of current practice?
@@ -34,7 +34,7 @@ If you can't answer these cleanly, that's a sign the problem needs more shaping 
 
 ## The writing process
 
-Before drafting anything, write a detailed outline — not just section headings, but the sub-headings, leading sentences, and bullets that capture the key idea in each sub-section. Place the key equations, figures, and tables at this stage too, and if you have co-authors, this is when to get everyone aligned on what the findings are and how they should be ordered. The order you use in the outline should be the same order you use when writing.
+Before drafting anything, write a detailed outline; not just section headings, but the sub-headings, leading sentences, and bullets that capture the key idea in each sub-section. Place the key equations, figures, and tables at this stage too, and if you have co-authors, this is when to get everyone aligned on what the findings are and how they should be ordered. The order you use in the outline should be the same order you use when writing.
 
 When you actually draft, don't write top to bottom. Write in this order: **results, methods, discussion and conclusion, introduction, abstract.** Results and methods are the parts you actually know; write those first. The introduction and abstract are easiest to write last, once you know exactly what the paper says.
 

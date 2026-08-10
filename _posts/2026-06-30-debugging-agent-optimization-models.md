@@ -4,6 +4,7 @@ date: 2026-06-30
 categories: [learning]
 tags: [optimization, llm-agents]
 excerpt: "Notes on building an agent that debugs optimization models — infeasibility, wrong objectives, and silent solver issues — instead of chasing them by hand."
+published: false
 ---
 ## The problem I ran into
 

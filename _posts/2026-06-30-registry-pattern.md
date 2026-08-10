@@ -4,6 +4,7 @@ date: 2026-06-30
 categories: [learning]
 tags: [software-design, engineering]
 excerpt: "How I stumbled onto the registry pattern, what it actually solves, and where it started adding more complexity than it was worth."
+published: false
 ---
 ## The problem I ran into
 

@@ -128,9 +128,9 @@ class ListHandler(logging.Handler):
         })
 ```
 
-`logging.Handler` is a base class — subclass it and implement `emit(record)`. A `LogRecord` carries the message text, level, timestamp, filename, line number, and any exception info. `self.format(record)` runs the attached formatter.
+`logging.Handler` is a base class. You should subclass it and implement `emit(record)`. A `LogRecord` carries the message text, level, timestamp, filename, line number, and any exception info. `self.format(record)` runs the attached formatter.
 
-This pattern is how you embed accumulated log messages directly into an API response body — the handler collects them as the request runs, and you read `log_messages` when building the response.
+This pattern is how you embed accumulated log messages directly into an API response body. The handler collects them as the request runs, and you read `log_messages` when building the response.
 
 ### The custom `JsonFormatter`
 
@@ -194,13 +194,13 @@ finally:
 
 `else` is underused and useful: it keeps the "happy path" code separate from exception handling. `finally` is for cleanup (closing files, releasing locks) that must happen regardless.
 
-### Raising exceptions
+<!-- ### Raising exceptions
 
 ```python
 raise ValueError("something is wrong")        # create and raise immediately
 raise                                          # re-raise the current exception (inside except)
 raise RuntimeError("wrapper") from original_e  # chain: attaches original as __cause__
-```
+``` -->
 
 ### Custom exception classes
 
@@ -213,7 +213,7 @@ class MyError(Exception):
 raise MyError("details")
 ```
 
-You inherit from `Exception` (or any subclass of it). Custom exceptions let callers write `except MyError` instead of `except Exception` — much more precise, and they won't accidentally catch unrelated errors.
+You inherit from `Exception` (or any subclass of it). Custom exceptions let callers write `except MyError` instead of `except Exception`. This is much more precise, and they won't accidentally catch unrelated errors.
 
 ## A structured exception pattern for APIs
 
@@ -262,7 +262,7 @@ def _validate_request(body):
 
 Notice: no `try`/`except` here. The function checks conditions and raises. It is not responsible for *handling* the error — it is responsible for *detecting* it. Handling happens higher up the call stack.
 
-### Where exceptions are caught — the centralized handler
+<!-- ### Where exceptions are caught — the centralized handler
 
 ```python
 @app.exception_handler(Exception)
@@ -319,7 +319,7 @@ POST /process  (invalid resource name)
       └── return JSONResponse(status_code=400, content={...})
 ```
 
-The caller gets a structured JSON body with a human-readable description and the accumulated log messages. The ops team sees the same event in the log aggregator, with a correlation ID for tracing.
+The caller gets a structured JSON body with a human-readable description and the accumulated log messages. The ops team sees the same event in the log aggregator, with a correlation ID for tracing. -->
 
 ## Best practices
 
@@ -388,7 +388,7 @@ except SomeError as e:
     raise   # ← now the top-level handler logs it again
 ```
 
-Decide at *one level* whether to log. Usually the highest-level handler logs; intermediate code just re-raises.
+<!-- Decide at *one level* whether to log. Usually the highest-level handler logs; intermediate code just re-raises. -->
 
 ## Cleaning up the exception hierarchy
 
@@ -430,7 +430,7 @@ else:
     ...  # unexpected 500
 ```
 
-This eliminates the `isinstance` chain and makes adding new exception types trivial — just subclass `AppException` and set a `status_code`.
+<!-- This eliminates the `isinstance` chain and makes adding new exception types trivial — just subclass `AppException` and set a `status_code`.
 
 ## Summary
 
@@ -441,6 +441,6 @@ This eliminates the `isinstance` chain and makes adding new exception types triv
 | Formatter | Shape of each message | `JsonFormatter`, `%(message)s` |
 | Filter | Fine-grained control over what gets emitted | `_ExactLevel` |
 | Custom exception | Named signal for a specific failure mode | `InvalidRequestKey`, `NoResultException` |
-| Centralized handler | Single place that turns exceptions into HTTP responses | `@app.exception_handler(Exception)` |
+| Centralized handler | Single place that turns exceptions into HTTP responses | `@app.exception_handler(Exception)` | -->
 
-The key mental model: **raise early, handle late**. Deep in business logic you raise a specific exception. You don't try to handle it there — you let it bubble up to the outermost layer, which knows how to turn it into a proper HTTP response and a log entry. That separation keeps business logic clean and error handling consistent.
+The key mental model: **raise early, handle late**. Deep in business logic you raise a specific exception. You don't try to handle it there; you let it bubble up to the outermost layer, which knows how to turn it into a proper HTTP response and a log entry. That separation keeps business logic clean and error handling consistent.

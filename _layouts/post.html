@@ -1,9 +1,13 @@
 ---
 layout: default
 ---
+{% assign post_category = page.categories | first %}
 <article class="post">
   <header class="post-header">
     <div class="container">
+      {% if post_category %}
+        <a class="post-back-link" href="/{{ post_category }}/">&laquo; Back to {{ post_category | capitalize }}</a>
+      {% endif %}
       <h1 class="post-title">{{ page.title }}</h1>
       <p class="post-meta">
         <time datetime="{{ page.date | date_to_xmlschema }}">
@@ -17,7 +21,6 @@ layout: default
     {{ content }}
   </div>
 
-  {% assign post_category = page.categories | first %}
   {% assign category_posts = site.categories[post_category] %}
   {% if category_posts %}
     {% assign category_posts = category_posts | sort: "date" | reverse %}

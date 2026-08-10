@@ -346,7 +346,18 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-.post-header .post-title, 
+.post-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--light-text);
+}
+
+.post-back-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+.post-header .post-title,
 .page-header .page-title {
   margin-bottom: 0.5rem;
   font-weight: 700;
