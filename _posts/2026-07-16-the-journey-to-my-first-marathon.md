@@ -9,11 +9,11 @@ excerpt: "Five years and 335 runs later: a first marathon, and what the data say
 ## Key stats from the marathon
 On July 26, 2026 I ran 42.53 kilometers through San Francisco in 5 hours and 14 minutes. During the race, I also gained roughly 1400 feet in elevation (give or take, 140 floors). It was my first marathon, and it is the newest entry in five years of Garmin data going back to May 2021. Before I wrote anything about how the race felt, I did what I always do when I see a large pile of numbers: I look at them to see if they have anything interesting to say. Before I dig more into the analysis, I will briefly review some key stats from the marathon.
 
-<img src="/assets/img/posts/running/marathon-route-map.png" alt="Map of the San Francisco marathon route, colored by pace, from Fisherman's Wharf through Golden Gate Park and back" />
+<img src="/assets/img/posts/the-journey-to-my-first-marathon/marathon-route-map.png" alt="Map of the San Francisco marathon route, colored by pace, from Fisherman's Wharf through Golden Gate Park and back" />
 
-<img src="/assets/img/posts/running/marathon-metrics.png" alt="Elevation, pace, heart rate, run cadence, and temperature traces over the course of the marathon" />
+<img src="/assets/img/posts/the-journey-to-my-first-marathon/marathon-metrics.png" alt="Elevation, pace, heart rate, run cadence, and temperature traces over the course of the marathon" />
 
-<img src="/assets/img/posts/running/marathon-stats.png" alt="Full marathon stats: distance, calories, timing, elevation, pace, running dynamics, and temperature" />
+<img src="/assets/img/posts/the-journey-to-my-first-marathon/marathon-stats.png" alt="Full marathon stats: distance, calories, timing, elevation, pace, running dynamics, and temperature" />
 
 A few things to notice here. My body temperature climbed steadily from 18°C to 28°C over the five hours and the cadence variations get noticeably denser in the rear half of the race. This is not surprising. The marathon course had much more elevation gain than what I had prepared for. While I knew that I would gain 1000+ feet, I didn't really know how it would exactly feel. After several intense climbs till I reached mile 20, I was out of gas and had to take several walking breaks. I am still not sure if it was heat catching up due to pacing in the first 20 miles or pure fatigue. I attribute this to deviations from the plan that I intended to follow for the run. My longest run was 20 miles, that too with several breaks after mile 17. I believe 3-4 more weeks of training would have helped me finish stronger than I did.
 
