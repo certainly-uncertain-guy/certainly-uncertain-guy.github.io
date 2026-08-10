@@ -54,9 +54,9 @@ Be specific; the title should convey exactly what the paper achieved. Choose wor
 A good abstract follows a fairly rigid shape: one or two sentences of basic background, two or three sentences of more detailed background, one sentence stating the general problem, one sentence stating the main result ("here we show..."), two or three sentences on how that result compares to prior belief, one or two sentences putting it in general context, and optionally a closing broader-perspective note. (This structure follows Nature's own guidelines for writing summary paragraphs.)
 
 <!-- TODO: paste the abstract-writing guidelines snapshot here, then uncomment:
-<img src="/assets/img/posts/running-a-research-project/abstract-guidelines.png" alt="Guidelines for writing a paper abstract, annotated by sentence" />
+<img src="/assets/img/posts/starting-a-research-project/abstract-guidelines.png" alt="Guidelines for writing a paper abstract, annotated by sentence" />
 -->
-<img src="/assets/img/posts/running-a-research-project/abstract-guidelines.png" alt="Guidelines for writing a paper abstract, annotated by sentence" />
+<img src="/assets/img/posts/starting-a-research-project/abstract-guidelines.png" alt="Guidelines for writing a paper abstract, annotated by sentence" />
 
 ### **Introduction**
 

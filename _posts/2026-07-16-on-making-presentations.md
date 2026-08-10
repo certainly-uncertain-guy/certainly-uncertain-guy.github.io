@@ -33,7 +33,7 @@ Once the points you want to make are settled and the logic and reasoning behind 
 7. PowerPoint presentation
 8. Beamer
 
-If the answer is a word document, LaTeX document, or Markdown file, see [this post](/mentoring/2026/07/16/running-a-research-project/) for guidance on writing; further questions can always be discussed directly. Two other good guides worth reading are [these notes by my advisor Dr. Erhan Kutanoglu on writing a good report](/assets/pdf/Dr_K_guidelines.pdf) and [Whitesides' group guide to writing a paper](/assets/pdf/Whitesides_writing_res_paper.pdf). If the answer is email, consider reading about smart brevity, and consider asking Claude to rewrite the message in that style. If the answer is a meeting in person or a whiteboard session, reach out directly to plan it. If the answer is a PowerPoint presentation or Beamer, continue reading below. 
+If the answer is a word document, LaTeX document, or Markdown file, see [this post](/mentoring/2026/07/16/starting-a-research-project/) for guidance on writing; further questions can always be discussed directly. Two other good guides worth reading are [these notes by my advisor Dr. Erhan Kutanoglu on writing a good report](/assets/pdf/Dr_K_guidelines.pdf) and [Whitesides' group guide to writing a paper](/assets/pdf/Whitesides_writing_res_paper.pdf). If the answer is email, consider reading about smart brevity, and consider asking Claude to rewrite the message in that style. If the answer is a meeting in person or a whiteboard session, reach out directly to plan it. If the answer is a PowerPoint presentation or Beamer, continue reading below. 
 
 ## Pointers for making a PowerPoint/Beamer presentation
 
