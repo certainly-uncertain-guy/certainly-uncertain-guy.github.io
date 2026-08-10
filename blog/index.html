@@ -6,19 +6,20 @@ permalink: /blog/
 
 <section class="blog-section">
   <div class="container">
-    <div class="hub-cards">
-      <a class="hub-card" href="{{ '/learning/' | relative_url }}">
-        <h2>Learning</h2>
-        <p>Notes on new tools, AI, algorithms, project write-ups, and reflections on management and work.</p>
-      </a>
-      <a class="hub-card" href="{{ '/mentoring/' | relative_url }}">
-        <h2>Mentoring</h2>
-        <p>A reference library for routine how-tos — PPTs, reports, code reviews, PRs, and more.</p>
-      </a>
-      <a class="hub-card" href="{{ '/misc/' | relative_url }}">
-        <h2>Misc</h2>
-        <p>Nerdy personal-data projects and one-off write-ups that don't fit anywhere else.</p>
-      </a>
+    <div class="hub-list">
+      <article class="hub-card">
+        <h2 class="hub-title"><a href="{{ '/learning/' | relative_url }}">Learning</a></h2>
+        <p class="hub-excerpt"> This is like my lab notebook. I write blogs here to sharpen my own understanding as much as to share it.</p>
+      </article>
+      <article class="hub-card">
+        <h2 class="hub-title"><a href="{{ '/mentoring/' | relative_url }}">Mentoring</a></h2>
+        <p class="hub-excerpt"> A reference library for the boring-but-important stuff I saw myself repeating to students/interns/fresh grads. This will be populated with guidelines on things like how to make PPTs, use GitHub, and do communication with leaders. Almost all of it is me copy-pasting things I learnt from my mentors.
+        </p>
+      </article>
+      <article class="hub-card">
+        <h2 class="hub-title"><a href="{{ '/misc/' | relative_url }}">Misc</a></h2>
+        <p class="hub-excerpt">Everything else that doesn't fit under Learning or Mentoring. The junk drawer, in the best sense.</p>
+      </article>
     </div>
   </div>
 </section>
