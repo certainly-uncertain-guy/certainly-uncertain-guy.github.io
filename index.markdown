@@ -7,10 +7,9 @@ layout: default
 <div class="profile-container">
 <p><strong style="font-size: 1.5em;">Hello! </strong></p>
 <p>I am Ashutosh, an Applied Scientist with experience in building and deploying autonomous planning models in production systems. At BNSF Railway, I serve as tech lead for a decision-support system that orchestrates railcar movements across all BNSF Railway's terminals. Before this, I developed and deployed a model for train to track assignment at BNSF Railway's largest fueling terminal.</p>
+<p><strong>Technical focus:</strong> I specialize in solving scheduling, routing, matching, assignment, and other resource allocation problems which are formulated as mathematical optimization models and solved with methods like neighborhood search, metaheuristics, and decomposition algorithms. On the ML side, I have experience in deep learning, reinforcement learning, time series modeling, and anomaly detection.</p>
 
-<p><strong>Technical focus:</strong> I specialize in solving scheduling, routing, and resource allocation problems which are formulated as optimization models and solved with methods like metaheuristics and decomposition algorithms. On the ML side, I have experience in deep learning, reinforcement learning, time series modeling, and anomaly detection.</p>
-
-<p><strong>Research background:</strong> I completed my PhD in Operations Research at UT Austin, where I developed optimization frameworks for infrastructure planning under uncertainty — designing stochastic and robust models with scalable solution methods. My research has been published in peer-reviewed venues and received the Best Student Paper Award at the IISE Annual Conference. I also worked on reinforcement learning for networked systems, including inverse RL for routing policy inference and multi-agent RL for coordinated traffic optimization.</p>
+<p><strong>Research background:</strong> I completed my PhD in Operations Research at UT Austin, where I developed optimization frameworks for infrastructure planning under uncertainty. Specifically, I designed stochastic and robust optimization models for resource allocation to enhance power grid resilience. While doing such resource allocations, I showed ways in which short- and long-term planning should be integrated and demonstrated how to quantify the value of coordination in dollars. I also developed simulation-based techniques for generating different scenarios in which flooding can impact power transmission grids. My research has been published in peer-reviewed venues and received the Best Student Paper Award at the IISE Annual Conference. In addition to my dissertation research, I also worked on reinforcement learning for networked systems, including inverse RL for routing policy inference and multi-agent RL for coordinated traffic optimization.</p>
 <h3>News</h3>
 <ul>
 <li><strong>[Jul, 2026]</strong>: Ran the San Francisco Marathon. This was my first marathon! Wrote a <a href="{{ '/misc/2026/08/02/the-journey-to-my-first-marathon/' | relative_url }}" style="color: blue; text-decoration: underline;">blog</a> about it!</li>
@@ -22,8 +21,10 @@ layout: default
 </ul>
 <h3>Get in Touch</h3>
 <p>Feel free to reach out via <a href="mailto:ashutosh.shukla@utexas.edu" style="color: blue; text-decoration: underline;">email</a> or connect with me on <a href="https://www.linkedin.com/in/ashutosh-ut-phd/" style="color: blue; text-decoration: underline;">LinkedIn</a> and <a href="https://github.com/certainly-uncertain-guy" style="color: blue; text-decoration: underline;">GitHub</a>.</p>
+
 </div>
 </div>
+
 <div class="blog-button-container">
 <a href="{{ '/blog/' | relative_url }}" class="btn secondary">Read Blogs</a>
 </div>
