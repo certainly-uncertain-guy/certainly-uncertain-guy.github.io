@@ -409,7 +409,35 @@ a:hover {
   max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Side-by-side images (e.g. a pair of square plots); stacks on narrow screens */
+.post-content .img-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
   margin: 1.5rem 0;
+}
+
+.post-content .img-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 450px;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .post-content .img-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post-content .img-row img {
+    flex: none;
+    width: 100%;
+  }
 }
 
 .post-content code, 
@@ -817,4 +845,33 @@ a:hover {
   color: var(--light-text);
   text-align: center;
   margin-top: 0.75rem;
+}
+
+/* Tables in post content (overrides Minima's hardcoded colors) */
+.post-content table {
+  display: block;
+  overflow-x: auto;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-content table tr:nth-child(even) {
+  background-color: var(--light-background);
+}
+
+.post-content table th,
+.post-content table td {
+  padding: 4px 10px;
+  text-align: right;
+  border: 1px solid var(--border-color);
+}
+
+.post-content table th {
+  background-color: var(--background);
 }
