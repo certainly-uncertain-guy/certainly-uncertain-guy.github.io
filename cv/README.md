@@ -35,6 +35,7 @@ sections/       One file per CV section.
 | `under-review.tex` | Manuscripts under review |
 | `preprints.tex` | arXiv / ESSOAr preprints |
 | `datasets.tex` | Published datasets |
+| `patents.tex` | Patents and patent applications |
 | `talks.tex` | Conference talks; invited and seminar talks |
 | `posters-abstracts.tex` | Posters and conference abstracts |
 | `honors.tex` | Honors and awards |
