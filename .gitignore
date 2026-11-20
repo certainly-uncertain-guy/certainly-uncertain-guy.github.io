@@ -4,3 +4,12 @@ _site
 .jekyll-metadata
 vendor
 **/.DS_Store
+
+# CV LaTeX build files (the published PDF lives in assets/pdf/)
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*.synctex.gz
+cv/main.pdf

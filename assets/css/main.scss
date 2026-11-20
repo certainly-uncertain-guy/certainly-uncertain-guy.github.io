@@ -219,6 +219,23 @@ a:hover {
 }
 
 
+/* Homepage intro: name, tagline, and links in bio/news */
+.profile-container .intro-name {
+  font-size: 1.75em;
+  margin-bottom: 0.25rem;
+}
+
+.profile-container .tagline {
+  color: var(--light-text);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.profile-container a {
+  color: var(--note-color) !important;
+  text-decoration: underline;
+}
+
 /* Blog button container */
 .blog-button-container {
   text-align: center;

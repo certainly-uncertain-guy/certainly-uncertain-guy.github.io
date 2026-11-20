@@ -1,0 +1,53 @@
+% =====================================================================
+%  Packages, layout, personal details and shared macros.
+%  Edit personal details here; edit content in sections/*.tex.
+% =====================================================================
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{microtype}      % tighter, more even line breaking
+\usepackage{hyperref}
+\hypersetup{colorlinks, linkcolor={red!50!black}, citecolor={blue!50!black}, urlcolor={blue!80!black}}
+\usepackage[left=0.8in,top=0.7in,right=0.8in,bottom=0.7in]{geometry}
+
+% ---- Personal details (printed in the header by resume.cls) ----------
+\usepackage{amssymb}
+\def\addressSep{\textcolor{black}{\scriptsize$\blacklozenge$}}   % separator between contact items
+\name{Ashutosh Shukla}
+\address{(+1)~512-949-8649 \\ \href{mailto:ashutosh.shukla@utexas.edu}{ashutosh.shukla@utexas.edu} \\ \href{https://certainly-uncertain-guy.github.io}{certainly-uncertain-guy.github.io}}
+
+% ---- List spacing used everywhere -------------------------------------
+\setlist{topsep=2pt, itemsep=2pt, parsep=0pt, partopsep=0pt}
+\setlist[itemize]{leftmargin=1.5em}
+\setlist[itemize,2]{leftmargin=1.2em, label=--}
+% Numbered lists for publications / talks (newest first, numbered top-down)
+\newlist{pubs}{enumerate}{1}
+\setlist[pubs]{label=\arabic*., leftmargin=2em, itemsep=4pt}
+
+% ---- Citation helpers ------------------------------------------------
+\newcommand{\me}{\textbf{Shukla, A.}}                 % bold own name in author lists
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
+\newcommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{arXiv:#1}}
+\newcommand{\note}[1]{\textit{(#1)}}                  % e.g. \note{Best Student Paper Award}
+\newcommand{\todo}[1]{{\color{red}[#1]}}               % visible placeholder -- remove before sending
+
+% ---- Entry helpers ---------------------------------------------------
+% \position{Organization}{Title}{Dates}
+\newcommand{\position}[3]{\textbf{#1} \hfill #3\\ \textit{#2}\par}
+% \subhead{Project name} -- bold run-in heading inside an appointment
+\newcommand{\subhead}[1]{\textbf{#1}}
+% \degree{Institution}{Degree}{Date}
+\newcommand{\degree}[3]{\textbf{#1} \hfill #3\\ \textit{#2}\par\smallskip}
+% \dated{text}{date} -- one line with a right-aligned date
+\newcommand{\dated}[2]{#1 \hfill #2}
+
+
+% Tighter vertical spacing everywhere (parskip package default is ~6.8pt)
+\setlength{\parskip}{3pt plus 1pt}
+
+\setlength{\multicolsep}{2pt}
+\setlength{\columnsep}{2.5em}
+
+% Avoid lines running into the margin on long titles
+\setlength{\emergencystretch}{1.5em}

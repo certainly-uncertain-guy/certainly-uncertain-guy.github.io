@@ -5,31 +5,32 @@ layout: default
 <div class="container">
 <div class="about-content">
 <div class="profile-container">
-<p><strong style="font-size: 1.5em;">Hello! </strong></p>
-<p>I am Ashutosh, an Applied Scientist who builds AI that makes decisions for systems operating in the physical world. I am currently a Member of Technical Staff - Robotics Planning at Atoms, where I am building the brain of autonomous mines. Previously, at BNSF Railway, I served as tech lead for a decision-support system that orchestrates railcar movements across all BNSF Railway's terminals, and before that I developed and deployed a model for train-to-track assignment at BNSF Railway's largest fueling terminal.</p>
-<p><strong>Technical focus:</strong> I specialize in solving scheduling, routing, matching, assignment, and other resource allocation problems which are formulated as mathematical optimization models and solved with methods like neighborhood search, metaheuristics, and decomposition algorithms. On the ML side, I have experience in deep learning, reinforcement learning, time series modeling, and anomaly detection.</p>
-
-<p><strong>Research background:</strong> I completed my PhD in Operations Research at UT Austin, where I developed optimization frameworks for infrastructure planning under uncertainty. Specifically, I designed stochastic and robust optimization models for resource allocation to enhance power grid resilience. While doing such resource allocations, I showed ways in which short- and long-term planning should be integrated and demonstrated how to quantify the value of coordination in dollars. I also developed simulation-based techniques for generating different scenarios in which flooding can impact power transmission grids. My research has been published in peer-reviewed venues and received the Best Student Paper Award at the IISE Annual Conference. In addition to my dissertation research, I also worked on reinforcement learning for networked systems, including inverse RL for routing policy inference and multi-agent RL for coordinated traffic optimization.</p>
+<p class="intro-name"><strong>Ashutosh Shukla</strong></p>
+<p class="tagline">Applied Scientist · Robotics Planning at Atoms · Ph.D., Operations Research, UT Austin</p>
+<p>I build AI that makes decisions for systems operating in the physical world. At Atoms, I'm a Member of Technical Staff in Robotics Planning, developing motion, coordination, and fleet planning for autonomous haul trucks at mines and quarries.</p>
+<p>At BNSF Railway, I led a 5-person team building a decision-support system for flat yard switching in railway terminals. It's now deployed at 11 yards, and we filed a patent for the work. I also built the optimization model for train-to-fuel-pad assignment at BNSF's largest fueling terminal.</p>
+<p>My Ph.D. at UT Austin focused on making power grids resilient to rare, extreme flooding: stochastic optimization models for allocating hardening and preparedness budgets, and scenario-generation methods for flood risk. That work won the Best Student Paper Award at the IISE Annual Conference. My toolkit spans stochastic and discrete optimization, simulation, and reinforcement learning.</p>
 <h3>News</h3>
 <ul>
 <li><strong>[Nov, 2026]</strong>: Joined Atoms as a Member of Technical Staff - Robotics Planning</li>
 <li><strong>[Nov, 2026]</strong>: Filed my first patent application, on an AI agent and custom harness that orchestrate optimization models</li>
 <li><strong>[Nov, 2026]</strong>: Gave talk on "A decision-support system for flat yard switching in railway terminals" at INFORMS 2026, San Francisco</li>
-<li><strong>[Oct, 2026]</strong>: Journal paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378779626016846" style="color: blue; text-decoration: underline;">Investing in long-term hardening of the power grid against flooding via mathematical optimization</a> published</li>
-<li><strong>[Jul, 2026]</strong>: Ran the San Francisco Marathon. This was my first marathon! Wrote a <a href="{{ '/misc/2026/08/02/the-journey-to-my-first-marathon/' | relative_url }}" style="color: blue; text-decoration: underline;">blog</a> about it!</li>
-<li><strong>[Apr, 2026]</strong>: Paper on <a href="https://arxiv.org/pdf/2604.22221" style="color: blue; text-decoration: underline;">Out-of-sample testing of two-stage stochastic programs</a> posted on arXiv</li>
-<li><strong>[Oct, 2025]</strong>: Gave invited talk on "A backtracking heuristic for train-to-fuel-pad assignments" at INFORMS 2025, Atlanta</li>
-<li><strong>[Sep, 2025]</strong>: Journal paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352467725003558" style="color: blue; text-decoration: underline;">Co-optimizing grid resilience decisions for flooding</a> published</li>
-<li><strong>[Nov, 2024]</strong>: Conference paper on <a href="https://ieeexplore.ieee.org/abstract/document/10838934" style="color: blue; text-decoration: underline;">NORTA modeling for flood scenarios</a> accepted at the Winter Simulation Conference, 2024</li>
-<li><strong>[June, 2024]</strong>: Joined BNSF Railway as an Optimization Specialist</li>
+<li><strong>[Oct, 2026]</strong>: Journal paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378779626016846">Investing in long-term hardening of the power grid against flooding via mathematical optimization</a> published</li>
+<li><strong>[Jul, 2026]</strong>: Ran the San Francisco Marathon. This was my first marathon! Wrote a <a href="{{ '/misc/2026/08/02/the-journey-to-my-first-marathon/' | relative_url }}">blog</a> about it!</li>
+<li><strong>[Apr, 2026]</strong>: Paper on <a href="https://arxiv.org/pdf/2604.22221">Out-of-sample testing of two-stage stochastic programs</a> posted on arXiv</li>
+<li><strong>[Oct, 2025]</strong>: Gave talk on "A backtracking-based heuristic for train to fuel pad assignments" at INFORMS 2025, Atlanta</li>
+<li><strong>[Sep, 2025]</strong>: Journal paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352467725003558">Co-optimizing grid resilience decisions for flooding</a> published</li>
+<li><strong>[Nov, 2024]</strong>: Conference paper on <a href="https://ieeexplore.ieee.org/abstract/document/10838934">NORTA modeling for flood scenarios</a> accepted at the Winter Simulation Conference, 2024</li>
+<li><strong>[June, 2024]</strong>: Joined BNSF Railway as a Senior Operations Research and Advanced Analytics Specialist</li>
 </ul>
 <h3>Get in Touch</h3>
-<p>Feel free to reach out via <a href="mailto:ashutosh.shukla@utexas.edu" style="color: blue; text-decoration: underline;">email</a> or connect with me on <a href="https://www.linkedin.com/in/ashutosh-ut-phd/" style="color: blue; text-decoration: underline;">LinkedIn</a> and <a href="https://github.com/certainly-uncertain-guy" style="color: blue; text-decoration: underline;">GitHub</a>.</p>
+<p>Feel free to reach out via <a href="mailto:ashutosh.shukla@utexas.edu">email</a> or connect with me on <a href="https://www.linkedin.com/in/ashutosh-ut-phd/">LinkedIn</a> and <a href="https://github.com/certainly-uncertain-guy">GitHub</a>.</p>
 
 </div>
 </div>
 
 <div class="blog-button-container">
+<a href="{{ '/assets/pdf/Ashutosh_Shukla_Resume.pdf' | relative_url }}" class="btn secondary" target="_blank" rel="noopener">Resume</a>
 <a href="{{ '/blog/' | relative_url }}" class="btn secondary">Read Blogs</a>
 </div>
 </div>

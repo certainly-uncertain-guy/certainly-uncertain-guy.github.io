@@ -53,3 +53,11 @@ Imports Minima as a base, then overrides everything with CSS custom properties. 
 All three section pages share their tag-filter + post-list markup via `_includes/tag-filtered-posts.html` (parameterized by `category`). `/blog/` itself is a static card grid (`.hub-cards`/`.hub-card`) linking to each section — not a post feed.
 
 No pagination is used on any of these pages.
+
+## CV / Resume
+
+The CV's LaTeX source lives in `cv/` (see `cv/README.md` for section layout and citation conventions). `cv/` is excluded from the Jekyll build.
+
+- Build and publish: `cd cv && make`. This builds `cv/main.pdf` and copies it to `assets/pdf/Ashutosh_Shukla_Resume.pdf`, which is what the **Resume** links in `_layouts/default.html` (header nav) and `index.markdown` (homepage button) point to.
+- Keep the CV and homepage consistent: titles, dates and paper venues in `index.markdown` News should match `cv/sections/*.tex`.
+- When restructuring the CV, never drop an original item without asking the user.
