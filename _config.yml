@@ -24,7 +24,8 @@ plugins:
 exclude:
   - docs
   - CLAUDE.md
-  - cv          # LaTeX source of the CV; the built PDF is published from assets/pdf/
+  - cv          # LaTeX source of the CV
+  - assets/pdf/Ashutosh_Shukla_Resume.pdf  # CV PDF is kept in the repo but not published on the site
 
 # Default front matter
 defaults:

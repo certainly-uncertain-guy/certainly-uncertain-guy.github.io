@@ -58,6 +58,6 @@ No pagination is used on any of these pages.
 
 The CV's LaTeX source lives in `cv/` (see `cv/README.md` for section layout and citation conventions). `cv/` is excluded from the Jekyll build.
 
-- Build and publish: `cd cv && make`. This builds `cv/main.pdf` and copies it to `assets/pdf/Ashutosh_Shukla_Resume.pdf`, which is what the **Resume** links in `_layouts/default.html` (header nav) and `index.markdown` (homepage button) point to.
+- Build and publish: `cd cv && make`. This builds `cv/main.pdf` and copies it to `assets/pdf/Ashutosh_Shukla_Resume.pdf`, which stays in the repo but is excluded from the Jekyll build in `_config.yml`, so it is not published. The site has no Resume links; do not add any back.
 - Keep the CV and homepage consistent: titles, dates and paper venues in `index.markdown` News should match `cv/sections/*.tex`.
 - When restructuring the CV, never drop an original item without asking the user.

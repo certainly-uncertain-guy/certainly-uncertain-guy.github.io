@@ -30,7 +30,6 @@ layout: default
 </div>
 
 <div class="blog-button-container">
-<a href="{{ '/assets/pdf/Ashutosh_Shukla_Resume.pdf' | relative_url }}" class="btn secondary" target="_blank" rel="noopener">Resume</a>
 <a href="{{ '/blog/' | relative_url }}" class="btn secondary">Read Blogs</a>
 </div>
 </div>

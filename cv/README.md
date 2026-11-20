@@ -11,9 +11,9 @@ make           # builds main.pdf and publishes it to ../assets/pdf/Ashutosh_Shuk
 make clean     # removes LaTeX build files
 ```
 
-The website's **Resume** links (header nav and homepage button) point to
-`/assets/pdf/Ashutosh_Shukla_Resume.pdf`, so run `make` after every CV edit and commit
-that PDF. `cv/main.pdf` and the LaTeX build files are git-ignored. Jekyll excludes `cv/`
+The CV is kept in the repo but is not published on the website: there are no
+Resume links, and `_config.yml` excludes `assets/pdf/Ashutosh_Shukla_Resume.pdf` from the
+Jekyll build. Run `make` after every CV edit and commit that PDF to keep it current. `cv/main.pdf` and the LaTeX build files are git-ignored. Jekyll excludes `cv/`
 (see `_config.yml`), so the LaTeX source is never published.
 
 ## Layout
