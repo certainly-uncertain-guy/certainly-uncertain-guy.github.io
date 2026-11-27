@@ -1,0 +1,82 @@
+% Newest first. Format: \position{Organization}{Title}{Mon YYYY -- Mon YYYY}
+\begin{rSection}{Professional Appointments}
+
+\position{Atoms, TAV Employer, LP}{Member of Technical Staff -- Robotics Planning\footnotemark}{Nov 2026 -- Present}
+\footnotetext{Joined as Robotics Planning Engineer; retitled in a company-wide update to job titles, with duties unchanged.}
+Developing autonomy systems that coordinate fleets of autonomous haul trucks at mines and quarries
+\begin{itemize}
+    \item \textit{Motion planning:} real-time path and trajectory planning for 200+ ton nonholonomic trucks
+    \item \textit{Coordination planning:} multi-agent algorithms preventing collisions and deadlocks at scale
+    \item \textit{Fleet planning:} dynamic truck assignment via dispatch optimization and machine learning
+\end{itemize}
+\medskip
+
+\position{BNSF Railway Company}{Senior Data Scientist\footnotemark}{Jun 2024 -- Nov 2026}
+\footnotetext{Titled Senior Operations Research and Advanced Analytics Specialist until an internal reorganization in early 2026; scope of responsibilities unchanged.}
+\begin{itemize}
+    \item \subhead{Decision-support system for flat yard switching in railway terminals.}
+    Led a 5-person team (3 senior data scientists, 2 software engineers) building a centralized system that optimizes rail car movement decisions in terminals, a process currently managed by 150+ frontline operators
+    \begin{itemize}
+        \item \textbf{\textit{Impact:}} 0 to 90\%+ adoption in 10 months; deployed at 11 yards in 2026, on track for complete adoption at 2 by year-end; \$30M per year in total impact, realized yard by yard as each reaches complete adoption, starting with those 2 in 2027; filed a patent
+        \item \textbf{\textit{Built:}} the core optimization model with a modular, ``Lego-like'' architecture designed to scale to 50+ yards; agentic tools for explaining model outputs, debugging, and bug classification; a custom harness and agentic loops that orchestrate the model through configuration management; a simulator that tests whether model output can be executed on the ground
+        \item \textbf{\textit{Leadership:}} owned bi-weekly releases and presented adoption results to VPs and the CTO; aligned stakeholders across business, continuous improvement, field operations, and engineering; drove requirements, process standardization, change management, and user training; shaped observability and adoption dashboards that track metrics and blockers
+        \item Shared learnings with the academic and railroad communities (INFORMS Annual Meeting, 2026)
+    \end{itemize}
+    \item \subhead{Train-to-fuel-pad assignment at BNSF's largest fueling terminal.}
+    Developed V1 of an optimization model for train-to-track assignment at Belen, NM (annual fuel throughput $>$\$1B), using state-space search algorithms with priority-based conflict resolution
+    \begin{itemize}
+        \item Delivered savings within 3 weeks of deployment; on track for \$2.4M in 2026
+        \item The model is now being scaled to serve several other hubs and terminals
+        \item Presented the core algorithm at the INFORMS Annual Meeting, Atlanta, 2025
+    \end{itemize}
+    \item \subhead{Train rerouting tool.} Developed a tool that helps the operations team reroute trains 6--10x faster
+\end{itemize}
+\medskip
+
+\position{The University of Texas at Austin}{Graduate Research Assistant}{Jan 2020 -- May 2024}
+\begin{itemize}
+    \item Generated flood forecasts for Texas by running ADCIRC, a storm-surge simulation model, on a distributed HPC cluster; output data has been open-sourced on the NHERI DesignSafe portal
+    \item Designed a decision-support system for power grid resilience decision-making against extreme flood events; published 5 first-author papers and gave 10+ conference and symposium talks
+    \item Developed a copula-based statistical model for high-dimensional flood sample generation, cutting generation time from 2+ hours on a supercomputer to seconds with minimal information loss
+\end{itemize}
+\medskip
+
+\position{Argonne National Laboratory}{Givens Associate, Mathematics and Computer Science Division}{May 2022 -- Aug 2022}
+\begin{itemize}
+    \item Implemented an input convex neural network in PyTorch for data-driven convex approximation
+    \item Presented the findings to Argonne's Mathematics and Computer Science Division
+\end{itemize}
+\medskip
+
+\position{SparkCognition}{Applied Research Intern}{May 2021 -- Aug 2021}
+\begin{itemize}
+    \item Developed an explainable heuristic that combines the predictions of individual anomaly detection models (built at the sub-component level) to predict failure of the main component
+    \item Found an inconsistency between a new model's failure predictions and its reported feature importance; proposed a rule-based feature-importance algorithm, a 3--8x improvement over baseline
+\end{itemize}
+\medskip
+
+\position{SparkCognition}{Data Science Intern}{May 2019 -- Aug 2019}
+\begin{itemize}
+    \item Designed a metric based on KL divergence and the sequential probability ratio test to characterize symptoms preceding failure in IoT-enabled assets such as oil rigs and combustion turbines
+    \item The method identifies symptom-indicating features and the time at which symptoms first appeared for failures flagged by the company's anomaly detection model
+    \item The method is used to filter reliable training data and reduces model-building time by 3--5x
+    \item Received a return offer based on the project work
+\end{itemize}
+\medskip
+
+\position{Zillow Inc.}{Student Researcher (Part-time)}{Jan 2019 -- May 2019}
+\begin{itemize}
+    \item Framed Zillow's use case as a capacitated vehicle routing problem with time windows and built a Python module for it using Google OR-Tools
+    \item Modified Google OR-Tools source code to tune its heuristics for better algorithmic performance
+    \item The model assigned 120+ scheduled visits to 4--5 employees, with route plans that adhered to both hard and soft time-window constraints at all locations
+    \item Ran extensive sensitivity analysis and benchmarking against Zillow's solver: OR-Tools was faster, while Zillow's solver scaled better for their use case
+\end{itemize}
+\medskip
+
+\position{Alethe Labs}{Big Data Engineer}{Jul 2017 -- Jun 2018}
+\begin{itemize}
+    \item Designed and implemented a machine learning model for anomaly detection and defect characterization in oil pipelines using maintenance data from a leading Indian oil corporation
+    \item The model identifies, classifies, and locates 20+ types of anomalies in a 100-mile pipeline within an hour, a task that otherwise takes 40--60 person-hours
+\end{itemize}
+
+\end{rSection}

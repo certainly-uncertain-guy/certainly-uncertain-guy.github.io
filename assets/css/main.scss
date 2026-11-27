@@ -1,0 +1,901 @@
+---
+---
+
+@import "minima";
+
+/* Light theme variables */
+:root,
+[data-theme="light"] {
+  --primary-color: #333333;
+  --secondary-color: #555555;
+  --accent-color: #777777;
+  --text-color: #1f2937;
+  --light-text: #6b7280;
+  --background: #ffffff;
+  --light-background: #F6F1ED;
+  --border-color: #e5e7eb;
+  --footer-bg: #F6F1ED;
+  --note-color: #2563eb;
+  --chart-series-1: #2563eb;
+  --chart-series-2: #eb6834;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --primary-color: #e5e7eb;
+  --secondary-color: #d1d5db;
+  --accent-color: #9ca3af;
+  --text-color: #f3f4f6;
+  --light-text: #d1d5db;
+  --background: #1f2937;
+  --light-background: #111827;
+  --border-color: #374151;
+  --footer-bg: #111827;
+  --note-color: #60a5fa;
+  --chart-series-1: #3987e5;
+  --chart-series-2: #d95926;
+}
+
+/* Base styles */
+body {
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-background); /* Changed from var(--background) to maintain consistent background */
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Ensure main content area has the correct background */
+.site-content {
+  background-color: var(--light-background);
+  min-height: 100vh;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+p, li {
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-color) !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* Dark mode toggle button */
+.site-branding {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  color: var(--accent-color);
+}
+
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+/* Header and Navigation */
+.site-header {
+  background-color: var(--light-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  border-color: var(--light-background);
+  padding: 1rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.site-title:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.site-nav a {
+  color: var(--text-color) !important;
+  margin-left: 2.5rem;
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  font-size: 1.125rem;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.site-nav a:hover, 
+.site-nav a.active {
+  color: var(--primary-color) !important;
+  border-bottom: 2px solid var(--primary-color);
+  text-decoration: none;
+}
+
+/* About Me Section on Home Page */
+.about-me {
+  padding: 6rem 0 4rem;
+  background-color: var(--light-background);
+  transition: background-color 0.3s ease;
+}
+
+.about-content {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible; /* Ensure content is fully visible */
+}
+
+
+.about-content ul {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Profile image with text wrapping - fixed */
+.profile-container {
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.profile-container p {
+  margin-top: 0;
+  overflow: visible;
+}
+
+
+/* Homepage intro: name, tagline, and links in bio/news */
+.profile-container .intro-name {
+  font-size: 1.75em;
+  margin-bottom: 0.25rem;
+}
+
+.profile-container .tagline {
+  color: var(--light-text);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.profile-container a {
+  color: var(--note-color) !important;
+  text-decoration: underline;
+}
+
+/* Blog button container */
+.blog-button-container {
+  text-align: center;
+  margin-top: 4rem;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Blog Section */
+.blog-section {
+  padding: 6rem 0 4rem;
+  background-color: var(--light-background);
+  transition: background-color 0.3s ease;
+}
+
+.post-list {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.post-card {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0 0 2rem 0;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-title {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.post-title a {
+  font-weight: 700;
+}
+
+.post-excerpt {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.post-date {
+  color: var(--light-text);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin: 0.25rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.5px;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: var(--background) !important;
+}
+
+.btn.primary:hover {
+  background-color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color);
+}
+
+.btn.secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--background) !important;
+  text-decoration: none;
+}
+
+.btn.small {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.pagination .previous,
+.pagination .next {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+.pagination .previous:hover, 
+.pagination .next:hover {
+  color: var(--secondary-color) !important;
+}
+
+.pagination .page_number {
+  margin: 0 1rem;
+  color: var(--light-text);
+}
+
+/* Post pages - UPDATED to remove box and ensure responsiveness */
+.post-header, 
+.page-header {
+  padding: 4rem 20px 2rem;
+  background-color: transparent; /* Changed from var(--light-background) to transparent */
+  transition: background-color 0.3s ease;
+  max-width: 75%;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color); /* Optional subtle separator */
+  margin-bottom: 2rem;
+}
+
+.post-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--light-text);
+}
+
+.post-back-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+.post-header .post-title,
+.page-header .page-title {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.post-header .post-meta {
+  color: var(--light-text);
+  font-weight: 500;
+}
+
+.post-content, 
+.page-content {
+  padding: 2rem 20px 4rem;
+  transition: background-color 0.3s ease;
+  max-width: 75%;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent; /* Ensure it doesn't override the parent background */
+}
+
+.post-content a,
+.page-content a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.post-content a:hover, 
+.page-content a:hover {
+  color: var(--secondary-color) !important;
+}
+
+.post-content .note,
+.page-content .note {
+  color: var(--note-color);
+}
+
+.post-content img,
+.page-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Side-by-side images (e.g. a pair of square plots); stacks on narrow screens */
+.post-content .img-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.post-content .img-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 450px;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .post-content .img-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post-content .img-row img {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.post-content code, 
+.page-content code {
+  background-color: var(--light-background);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.post-content pre, 
+.page-content pre {
+  background-color: var(--light-background);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.post-content pre code, 
+.page-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.post-navigation {
+  padding: 2rem 20px;
+  border-top: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+  max-width: 75%;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-navigation .post-nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-navigation .post-nav-links a {
+  font-weight: 500;
+}
+
+.post-navigation .post-nav-links a:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--footer-bg);
+  padding: 2rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.site-footer .footer-col-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.site-footer .footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 1rem;
+}
+
+.site-footer .social-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-footer .social-links a {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.site-footer .social-links a:hover {
+  color: var(--secondary-color) !important;
+}
+
+.site-footer .copyright {
+  text-align: center;
+  color: var(--light-text);
+  font-size: 0.875rem;
+}
+
+/* Override Minima theme defaults */
+.site-footer p {
+  color: var(--text-color);
+}
+
+/* Further reduce width on wider screens for better readability */
+@media (min-width: 1200px) {
+  .post-content, 
+  .page-content,
+  .post-header,
+  .page-header,
+  .post-navigation {
+    max-width: 65%; /* Even narrower on very wide screens */
+  }
+}
+
+/* Enhanced responsive styles */
+@media (max-width: 768px) {
+  .site-header .container {
+    background-color: var(--light-background);
+    flex-direction: column;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  
+  .site-branding {
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+  
+  .site-title {
+    font-size: 1.5rem; /* Smaller on mobile */
+    margin-right: 0.5rem;
+  }
+  
+  .theme-toggle {
+    margin-left: 0.5rem;
+  }
+  
+  .site-nav {
+    /* Undo Minima's phone dropdown styles (absolute box with border) */
+    position: static;
+    top: auto;
+    right: auto;
+    float: none;
+    border: none;
+    border-radius: 0;
+    margin-top: 0.75rem;
+    background-color: var(--light-background);
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap to next line if needed */
+  }
+  
+  .site-nav a {
+    margin: 0.5rem 1rem; /* Add vertical margin for spacing when wrapped */
+    font-size: 1rem; /* Smaller on mobile */
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .footer-col-wrapper {
+    flex-direction: column;
+  }
+  
+  .social-links {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+  
+  .social-links a {
+    margin: 0 1rem 0 0;
+  }
+  
+  .post-navigation .post-nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .post-title,
+  .hub-title {
+    font-size: 2.5rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  /* Make sure post headers and content are fully visible */
+  .post-header, 
+  .page-header,
+  .post-content, 
+  .page-content,
+  .post-navigation {
+    max-width: 90%; /* Wider on small screens */
+  }
+}
+
+/* Additional mobile tweaks */
+@media (max-width: 480px) {
+  .profile-container p {
+    clear: both;
+    margin-top: 1.5rem;
+  }
+  
+  .post-header, 
+  .page-header,
+  .post-content, 
+  .page-content,
+  .post-navigation {
+    max-width: 100%; /* Full width on very small screens */
+  }
+  
+  .site-header .container {
+    padding: 0.5rem 10px; /* Smaller padding on mobile */
+  }
+}
+
+/* Section intro (Learning/Mentoring/Misc) */
+.section-intro {
+  max-width: 90%;
+  margin: 0 auto 2.5rem;
+  font-size: 1.125rem;
+  color: var(--light-text);
+}
+
+/* Tag filter (Learning page) */
+.tag-filter {
+  max-width: 90%;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-pill {
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  border-color: var(--primary-color);
+}
+
+.tag-pill.active {
+  background-color: var(--primary-color);
+  color: var(--background) !important;
+  border-color: var(--primary-color);
+}
+
+/* Blog hub list */
+.hub-list {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.hub-card {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 0 2rem 0;
+  transition: transform 0.3s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-5px);
+}
+
+.hub-title {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hub-title a {
+  font-weight: 700;
+}
+
+.hub-excerpt {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+/* Misc living pages */
+.misc-pages {
+  max-width: 90%;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.misc-page-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  transition: transform 0.3s ease;
+}
+
+.misc-page-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Running stats post */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-tile {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.stat-tile-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-tile-label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+
+.chart-section {
+  margin: 3rem 0;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.chart-subtitle {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
+
+.chart-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.us-map-wrap {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.us-map-svg {
+  width: 100%;
+  height: auto;
+  background-color: var(--light-background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.us-map-state-border {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 0.75;
+  vector-effect: non-scaling-stroke;
+}
+
+.us-map-nation-border {
+  fill: none;
+  stroke: var(--light-text);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+
+.us-map-bubble {
+  fill: var(--chart-series-1);
+  fill-opacity: 0.55;
+  stroke: var(--chart-series-1);
+  stroke-width: 1;
+  cursor: default;
+}
+
+.us-map-bubble:hover {
+  fill-opacity: 0.85;
+}
+
+.us-map-label {
+  fill: var(--light-text);
+  font-size: 11px;
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+}
+
+.us-map-footnote {
+  font-size: 0.85rem;
+  color: var(--light-text);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* Tables in post content (overrides Minima's hardcoded colors) */
+.post-content table {
+  display: block;
+  overflow-x: auto;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-content table tr:nth-child(even) {
+  background-color: var(--light-background);
+}
+
+.post-content table th,
+.post-content table td {
+  padding: 4px 10px;
+  text-align: right;
+  border: 1px solid var(--border-color);
+}
+
+.post-content table th {
+  background-color: var(--background);
+}

@@ -1,0 +1,42 @@
+# Site settings
+title: Ashutosh Shukla
+
+# This description goes at the bottom of the webpage
+description: >-
+  Ashutosh Shukla
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://certainly-uncertain-guy.github.io" # Replace username with your GitHub username
+twitter_username: A_RShukla
+github_username:  certainly-uncertain-guy
+linkedin_username: ashutosh-ut-phd
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Not part of the published site — design specs/plans, some of which contain
+# literal {% %} Liquid syntax in code examples that would otherwise break the build.
+# CLAUDE.md is internal dev-agent guidance, not site content.
+exclude:
+  - docs
+  - CLAUDE.md
+  - cv          # LaTeX source of the CV
+  - assets/pdf/Ashutosh_Shukla_Resume.pdf  # CV PDF is kept in the repo but not published on the site
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /:categories/:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

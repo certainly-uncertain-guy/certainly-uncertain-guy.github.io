@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {% seo %}
+  </head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-branding">
+        <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="site-nav">
+        <a href="{{ "/" | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+        <a href="{{ "/blog/" | relative_url }}" {% if page.url contains "/blog/" %}class="active"{% endif %}>Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-col-wrapper">
+        <div class="footer-col">
+          <p>{{ site.description }}</p>
+        </div>
+        <div class="footer-col social-links">
+          {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}"><span class="icon">GitHub</span></a>
+          {% endif %}
+          {% if site.linkedin_username %}
+          <a href="https://linkedin.com/in/{{ site.linkedin_username }}"><span class="icon">LinkedIn</span></a>
+          {% endif %}
+          {% if site.twitter_username %}
+          <a href="https://twitter.com/{{ site.twitter_username }}"><span class="icon">Twitter</span></a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const htmlElement = document.documentElement;
+      
+      // Check if user has previously set a theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+      }
+      
+      // Update toggle button appearance based on current theme
+      updateToggleAppearance();
+      
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        updateToggleAppearance();
+      });
+      
+      function updateToggleAppearance() {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+          document.querySelector('.moon-icon').style.display = 'none';
+          document.querySelector('.sun-icon').style.display = 'block';
+        } else {
+          document.querySelector('.moon-icon').style.display = 'block';
+          document.querySelector('.sun-icon').style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
